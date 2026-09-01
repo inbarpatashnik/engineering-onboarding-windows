@@ -1,0 +1,1 @@
+Training material template. Adapt and distribute within your organization. Third-party container images and software retain their own licenses.

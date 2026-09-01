@@ -1,0 +1,7 @@
+{
+  "week": 8,
+  "mode": "delay",
+  "delay_ms": 1200,
+  "failure_rate": 0,
+  "mentor_note": "Week 8 deterministic diagnostic exercise"
+}

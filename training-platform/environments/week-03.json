@@ -1,0 +1,7 @@
+{
+  "week": 3,
+  "profiles": [
+    "data"
+  ],
+  "api_port": 8080
+}

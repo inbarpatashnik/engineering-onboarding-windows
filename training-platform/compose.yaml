@@ -1,0 +1,51 @@
+name: engineering-onboarding
+services:
+  simulator:
+    build: ./services/simulator
+    environment:
+      TRAINING_ADMIN_TOKEN: ${TRAINING_ADMIN_TOKEN:-local-training-only}
+      STATE_FILE: /data/state.json
+    ports:
+      - "${TRAINING_API_PORT:-8080}:8080"
+    volumes:
+      - simulator-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["data"]
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-training}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-training-only}
+      POSTGRES_DB: ${POSTGRES_DB:-training}
+    ports: ["54329:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  redis:
+    image: redis:7-alpine
+    profiles: ["cache"]
+    ports: ["63799:6379"]
+    volumes: ["redis-data:/data"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  redpanda:
+    image: redpandadata/redpanda:v24.2.18
+    profiles: ["events"]
+    command: ["redpanda", "start", "--overprovisioned", "--smp", "1", "--memory", "512M", "--reserve-memory", "0M", "--node-id", "0", "--check=false", "--kafka-addr", "PLAINTEXT://0.0.0.0:9092", "--advertise-kafka-addr", "PLAINTEXT://localhost:19092"]
+    ports: ["19092:9092"]
+    volumes: ["redpanda-data:/var/lib/redpanda/data"]
+volumes:
+  simulator-data:
+  postgres-data:
+  redis-data:
+  redpanda-data:
