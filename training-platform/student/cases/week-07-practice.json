@@ -1,0 +1,9 @@
+{
+  "name": "week-07-practice",
+  "week": 7,
+  "mode": "malformed",
+  "delay_ms": 0,
+  "failure_rate": 0,
+  "learning_goal": "Separate unit, integration, and contract checks",
+  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
+}

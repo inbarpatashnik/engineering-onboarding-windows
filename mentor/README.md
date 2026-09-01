@@ -1,3 +1,3 @@
 # Mentor guide — restricted
 
-Do not distribute this directory or `training-platform/mentor` to students during assessed work. Begin with open questions, ask for evidence, and reveal hints progressively. Use fault controls only after the baseline smoke test passes. Reset the week after reviews so incidents remain deterministic. Record rubric scores and one concrete next step.
+Do not distribute this directory or `training-platform/mentor` to students during assessed work. Students must operate the normal environment and visible cases themselves; do not start, seed, reset, or repair it for them. Begin with open questions, ask for their troubleshooting evidence, and reveal hints progressively. Use mentor fault controls only for an optional hidden assessment after the student's baseline and visible-case work pass. Record rubric scores and one concrete next step.

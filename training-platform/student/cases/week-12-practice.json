@@ -1,0 +1,9 @@
+{
+  "name": "week-12-practice",
+  "week": 12,
+  "mode": "unavailable",
+  "delay_ms": 0,
+  "failure_rate": 0.25,
+  "learning_goal": "Create failed-health-check and incompatible-config cases",
+  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
+}

@@ -14,6 +14,8 @@ The platform exposes a deterministic simulator on port 8080. Week profiles optio
 
 The simulator endpoints are `/health`, `/api/resources`, `/api/dependency`, `/api/state`, and mentor-only `/admin/*`. Admin requests require the local training token from `.env`; the scripts supply it automatically. This is a learning environment, not a production security design.
 
+Students own routine operation. `student/run-case.ps1` applies a visible deterministic case, `student/new-case.ps1` creates a custom case, and `student/reset-case.ps1` restores normal dependency behavior. The wrappers use the local admin endpoint so students can focus on system behavior rather than PowerShell details. Mentor controls are only for hidden review scenarios.
+
 ## Week services
 
 - Weeks 1–2: simulator only

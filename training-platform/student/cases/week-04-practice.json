@@ -1,0 +1,9 @@
+{
+  "name": "week-04-practice",
+  "week": 4,
+  "mode": "malformed",
+  "delay_ms": 0,
+  "failure_rate": 0,
+  "learning_goal": "Write three access patterns before choosing a model",
+  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
+}

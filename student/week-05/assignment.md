@@ -4,50 +4,95 @@
 
 Demonstrate correctness under concurrent requests.
 
-## Timebox and prerequisites
+## Suggested 10-hour plan
 
-Plan 8–10 hours. Complete the preceding week, run `..\..\training-platform\scripts\start-week.ps1 -Week 5`, then run the matching smoke test.
+| Work | Suggested time |
+|---|---:|
+| Required learning sources and notes | 1.5 hours |
+| Start, inspect, and understand the week's environment | 0.5 hour |
+| Three guided exercises | 2 hours |
+| Main implementation | 3 hours |
+| Create cases, test failures, and collect evidence | 1.5 hours |
+| Runbook, decisions, and reflection | 1 hour |
+| Buffer | 0.5 hour |
+| **Total** | **10 hours** |
 
-## Study prompts
+The times are guidance, not performance targets. If a source takes longer, record what was difficult instead of silently skipping it.
 
-Topics: Redis patterns, race conditions, idempotency, locking. For each topic, write one paragraph answering: what problem does it solve, what assumption can fail, and what observable signal reveals failure? Prefer official documentation for language, protocol, database, and tool behavior.
+## Required learning sources
 
-## Assignment
+- [Redis developer quick starts](https://redis.io/docs/latest/develop/get-started/) — suggested 40 min
+- [Redis client-side caching](https://redis.io/docs/latest/develop/clients/client-side-caching/) — suggested 35 min
 
-**Add safe caching to the catalog client.** Use the simulator at `http://localhost:8080`. Begin by calling `/health`, `/api/resources`, and `/api/dependency`. Store paths with `pathlib.Path`; never concatenate Windows paths by hand. Commands shown in your runbook must be PowerShell commands.
+While reading, answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: Redis patterns, race conditions, idempotency, locking.
 
-## Required work
+## Own the environment — 30 minutes
 
-1. Write acceptance criteria before implementation.
-2. Implement the smallest useful vertical slice.
-3. Add automated tests for the happy path and at least three failures.
-4. Capture structured evidence: request IDs, timings, test output, or query plans as appropriate.
-5. Document one rejected alternative and why.
-6. Demonstrate clean setup on a fresh PowerShell session.
+From the repository root, independently run:
 
-## Investigation prompts
+```powershell
+.\training-platform\scripts\start-week.ps1 -Week 5
+.\training-platform\scripts\smoke-test.ps1 -Week 5
+```
 
-- Which behavior is guaranteed by your code, and which depends on the environment?
-- What happens on timeout, duplicate input, malformed data, restart, and partial completion?
-- How would an operator detect and safely recover from failure?
-- What data must never appear in logs?
+Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, and the container logs. Explain which components and persistent volumes are active. You are expected to operate and reason about the environment; you are not assessed on PowerShell syntax or Windows administration.
+
+## Guided exercises — 2 hours
+
+1. **Measure cache hit and miss behavior** — 40 minutes.
+2. **Create stale-data and stampede cases** — 40 minutes.
+3. **Demonstrate an atomic update under concurrent requests** — 40 minutes.
+
+For the visible case for this week, run:
+
+```powershell
+.\training-platform\student\run-case.ps1 -Case week-05-practice
+```
+
+Reset visible cases with `.\training-platform\student\reset-case.ps1`.
+
+## Main assignment — 3 hours
+
+**Add safe caching to the catalog client.** Use the simulator at `http://localhost:8080`. Write acceptance criteria first, implement the smallest useful vertical slice, and preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying the supplied PowerShell commands is sufficient.
+
+## Create your own case — 1.5 hours
+
+Create a new deterministic case instead of changing mentor files:
+
+```powershell
+.\training-platform\student\new-case.ps1 -Name my-week-05-case -Mode delay -DelayMs 700
+.\training-platform\student\run-case.ps1 -Case my-week-05-case
+```
+
+Describe the hypothesis, expected signal, safe recovery, and automated assertion. Add tests for the happy path and at least three failures, including your case.
+
+## Before asking the mentor
+
+1. Re-run the smoke test and copy the exact failing command.
+2. Record expected versus actual behavior and the request ID/time.
+3. Inspect `docker compose ps` and relevant logs.
+4. Reset only the visible case; do not delete volumes unless data reset is the hypothesis.
+5. Try one controlled experiment and record the result.
+6. Ask a focused question containing evidence and what you already tried.
 
 ## Deliverables
 
 - Working source and dependency lock/requirements file
 - Automated tests and a one-command test instruction
-- `DECISIONS.md` with assumptions and tradeoffs
+- Your custom case JSON under `training-platform/student/cases/custom/`
+- `DECISIONS.md` with assumptions and one rejected alternative
 - `RUNBOOK.md` with start, verify, diagnose, stop, and recover steps
-- `EVIDENCE.md` with sanitized command output and conclusions
+- `EVIDENCE.md` with sanitized results and conclusions
 
 ## Definition of done
 
-- The environment smoke test passes before and after the demo.
-- Another engineer can reproduce the work on Windows from the runbook.
+- You independently started, inspected, exercised, and reset the environment.
+- The smoke test passes before and after the work.
+- Another engineer can reproduce the work using the supplied commands.
 - Failure behavior is bounded and tested.
 - No secrets, absolute user paths, or production data are committed.
-- You can explain the implementation without reading the code line by line.
+- You can explain the implementation and the case you designed.
 
 ## Reflection
 
-What changed in your mental model? Which signal was most useful? What would you redesign with twice the time?
+What did operating or changing the environment teach you about the subject? Which signal was most useful? What would you redesign with twice the time?

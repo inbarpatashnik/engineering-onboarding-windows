@@ -1,5 +1,7 @@
 # Windows setup and running guide
 
+This is a one-time operational guide, not a Windows curriculum. Students may copy the commands exactly. Assessment focuses on understanding the services, state, cases, signals, and recovery—not on PowerShell or Windows administration.
+
 ## Required software
 
 - Windows 10 or 11 (64-bit)
@@ -42,6 +44,8 @@ Deactivate with `deactivate`. Never use `source .venv/bin/activate` on Windows.
 .\training-platform\scripts\smoke-test.ps1 -Week 2
 .\training-platform\scripts\stop-week.ps1 -Week 2
 .\training-platform\scripts\reset-week.ps1 -Week 2
+.\training-platform\student\run-case.ps1 -Case week-02-practice
+.\training-platform\student\reset-case.ps1
 ```
 
 Pass `-NoBuild` to `start-week.ps1` to reuse the current simulator image. Use `-RemoveVolumes` with `stop-week.ps1` only when you intentionally want to discard environment data.

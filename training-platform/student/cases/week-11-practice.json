@@ -1,0 +1,9 @@
+{
+  "name": "week-11-practice",
+  "week": 11,
+  "mode": "delay",
+  "delay_ms": 700,
+  "failure_rate": 0,
+  "learning_goal": "Create CPU, latency, and saturation cases",
+  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
+}

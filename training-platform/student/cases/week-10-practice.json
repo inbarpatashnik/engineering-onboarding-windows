@@ -1,0 +1,9 @@
+{
+  "name": "week-10-practice",
+  "week": 10,
+  "mode": "malformed",
+  "delay_ms": 0,
+  "failure_rate": 0,
+  "learning_goal": "Create malicious-input and missing-authorization cases",
+  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
+}

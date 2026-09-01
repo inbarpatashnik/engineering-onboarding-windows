@@ -4,10 +4,10 @@
 
 Each week combines concepts, a constrained build, evidence collection, review, and reflection. Depth labels are **Deep** (implement and debug), **Working familiarity** (use safely and explain tradeoffs), and **Awareness** (recognize and know when to seek help).
 
-## Week 1: Engineering Foundations and Windows Tooling
+## Week 1: Engineering Foundations and Self-directed Debugging
 
 - **Depth:** Deep
-- **Subjects:** Git, PowerShell, Python environments, debugging habits.
+- **Subjects:** Git, Python project environments, evidence-driven debugging, independent learning habits.
 - **Applied work:** Build a repository health checker.
 - **Exit capability:** Explain a failure from evidence instead of guessing.
 

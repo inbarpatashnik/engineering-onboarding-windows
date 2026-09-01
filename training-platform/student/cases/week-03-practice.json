@@ -1,0 +1,9 @@
+{
+  "name": "week-03-practice",
+  "week": 3,
+  "mode": "delay",
+  "delay_ms": 700,
+  "failure_rate": 0,
+  "learning_goal": "Compare query plans before and after an index",
+  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
+}

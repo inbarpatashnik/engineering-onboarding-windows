@@ -7,9 +7,9 @@ This repository is a complete 13-week engineering onboarding program for one stu
 1. Read [WINDOWS-SETUP.md](WINDOWS-SETUP.md).
 2. Open PowerShell 7 in this folder (not Command Prompt).
 3. Run `Set-ExecutionPolicy -Scope Process Bypass` if local policy blocks scripts.
-4. Run `.\training-platform\scripts\setup.ps1`.
-5. Run `.\training-platform\scripts\start-week.ps1 -Week 1`.
-6. Run `.\training-platform\scripts\smoke-test.ps1 -Week 1`.
+4. Student: run `.\training-platform\scripts\setup.ps1` independently.
+5. Student: run `.\training-platform\scripts\start-week.ps1 -Week 1`.
+6. Student: run `.\training-platform\scripts\smoke-test.ps1 -Week 1` and resolve ordinary failures using the guide.
 7. Student: open `student\week-01\assignment.md`. Mentor: open `mentor\week-01\guide.md`.
 
 ## Package index
@@ -36,7 +36,7 @@ Use `reset-week.ps1` when you need a clean deterministic state. Reset removes th
 
 ## Privacy boundary
 
-The `mentor/` directory and `training-platform/mentor/` directory contain solutions, fault controls, and incident answers. Keep them outside the student's working copy when assessment integrity matters.
+Students own normal environment operation and visible case creation. The `mentor/` directory and `training-platform/mentor/` directory contain only hidden assessment controls and incident answers. Keep them outside the student's working copy when assessment integrity matters.
 
 ## Offline behavior
 
