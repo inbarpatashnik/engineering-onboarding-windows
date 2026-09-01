@@ -4,6 +4,17 @@
 
 Choose a model based on access patterns.
 
+## Week learning pack
+
+1. [Learning guide](learning-guide.md) — sequence and daily navigation
+2. [Source guide](source-guide.md) — readings, workshops, and note prompts
+3. [Exercise 1: source notes](exercises/01-source-notes.md)
+4. [Exercise 2: small practice](exercises/02-small-practice.md)
+5. [Exercise 3: environment lab](exercises/03-environment-lab.md)
+6. [Exercise 4: project and custom case](exercises/04-project-and-custom-case.md)
+7. [Exercise 5: weekly synthesis](exercises/05-weekly-synthesis.md)
+8. [Deliverables checklist](deliverables-checklist.md)
+
 ## Weekly rhythm: Sunday–Thursday, approximately 40 hours
 
 This plan assumes five ordinary eight-hour workdays. Adjust for holidays, organizational events, or approved leave; the mentor should reduce scope rather than expect hidden overtime. Breaks and normal team ceremonies are included within each day.

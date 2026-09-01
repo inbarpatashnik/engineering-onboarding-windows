@@ -17,7 +17,7 @@ This repository is a complete 13-week engineering onboarding program for one stu
 | Location | Audience | Purpose |
 |---|---|---|
 | `curriculum/` | Both | Syllabus, 13-week map, assessment rubric |
-| `student/` | Student | Weekly briefs, exercises, deliverables, definitions of done |
+| `student/` | Student | Complete weekly learning packs: sources, workshops, small exercises, labs, projects, synthesis, and checklists |
 | `mentor/` | Mentor only | Review guidance, hints, red flags, incident keys |
 | `training-platform/` | Both, controls mentor-only | Docker environment, simulator, scripts, seed data, fault presets |
 | `WINDOWS-SETUP.md` | Both | Installation and troubleshooting instructions |
