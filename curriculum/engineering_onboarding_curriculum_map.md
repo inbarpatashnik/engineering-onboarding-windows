@@ -1,6 +1,6 @@
 # 13-week curriculum map
 
-Expected student time is 10 hours weekly: 1.5 hours authoritative sources, 0.5 hour environment inspection, 2 hours guided exercises, 3 hours implementation, 1.5 hours case design/testing, 1 hour documentation/reflection, and 0.5 hour buffer. Students independently operate the supplied environment and create deterministic cases. Windows and PowerShell are delivery mechanisms, not assessed subjects. Mentor time is a separate review, not exercise activation. Weeks are cumulative; the capstone reuses API, data, messaging, telemetry, reliability, and operational practices.
+Expected student time is approximately 40 hours weekly across Sunday–Thursday. Each ordinary day is planned for eight hours including normal breaks and team ceremonies: Sunday covers sources and foundations; Monday guided practice and a visible case; Tuesday design and implementation; Wednesday implementation, custom cases, and failure testing; Thursday reproduction, documentation, mentor review, and remediation. Shortened weeks must have explicit scope reduction rather than hidden overtime. Students independently operate the supplied environment and create deterministic cases. Windows and PowerShell are delivery mechanisms, not assessed subjects. Mentor review challenges and assesses the student; it does not activate the exercise. Weeks are cumulative; the capstone reuses API, data, messaging, telemetry, reliability, and operational practices.
 
 | Week | Theme | Environment profile | Primary evidence |
 |---:|---|---|---|
