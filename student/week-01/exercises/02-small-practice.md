@@ -2,13 +2,13 @@
 
 These exercises isolate one idea at a time before the main project. Keep each experiment small, reversible, and evidenced.
 
-## Exercise 1: Clone into a path containing spaces and prove every command still works
+## Exercise 1: Use git bisect to identify the exact commit that introduced a regression
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Clone into a path containing spaces and prove every command still works. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Use git bisect to identify the exact commit that introduced a regression. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 
@@ -17,13 +17,13 @@ Clone into a path containing spaces and prove every command still works. Define 
 - Did you capture an observable signal rather than an opinion?
 - Does the environment pass its smoke test afterward?
 
-## Exercise 2: Break one configuration value, diagnose it from evidence, and restore it
+## Exercise 2: Recover deleted or rewritten work with reflog and explain which objects were still reachable
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Break one configuration value, diagnose it from evidence, and restore it. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Recover deleted or rewritten work with reflog and explain which objects were still reachable. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 
@@ -32,13 +32,13 @@ Break one configuration value, diagnose it from evidence, and restore it. Define
 - Did you capture an observable signal rather than an opinion?
 - Does the environment pass its smoke test afterward?
 
-## Exercise 3: Add a self-check command to your repository health checker
+## Exercise 3: Resolve a conflicting rebase, then restructure a messy branch into reviewable commits without losing behavior
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Add a self-check command to your repository health checker. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Resolve a conflicting rebase, then restructure a messy branch into reviewable commits without losing behavior. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 

@@ -5,7 +5,7 @@
 
 ## Scenario
 
-Given an unfamiliar broken repository, produce a 15-minute evidence-first diagnosis and a prioritized recovery plan.
+A clean automated runner fails while the developer machine passes. Locate the regression, identify hidden state, recover one apparently lost change, and design a provider-neutral verification contract that would prevent recurrence.
 
 ## Produce
 

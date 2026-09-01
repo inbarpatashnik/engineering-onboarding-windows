@@ -1,27 +1,30 @@
 # Week 1 deliverables checklist
 
-## Learning
+## Advanced Git evidence
 
-- [ ] Core reading notes link to each source and relevant sections
-- [ ] Workshop evidence is complete and contains no sensitive data
-- [ ] Predictions were checked against environment observations
+- [ ] `git bisect` identified the first bad commit with a deterministic test
+- [ ] Reflog recovery restored a commit after its branch name was removed
+- [ ] Conflict resolution preserved the combined intended behavior and passed verification
+- [ ] Before/after graphs explain rebase identity changes
+- [ ] Messy history was converted into a reviewable sequence without behavior loss
 
-## Exercises
+## Verification and CI foundations
 
-- [ ] Three small exercises include expectation, evidence, cleanup, and self-check
-- [ ] Visible case includes predictions, repeated observations, and recovery proof
-- [ ] Main project meets written acceptance criteria
-- [ ] Custom case JSON has a specific learning goal and expected signal
-- [ ] Happy path, three failures, and recovery/restart behavior are tested
-- [ ] Weekly synthesis and failure matrix are complete
+- [ ] One provider-neutral verification command runs from a clean checkout
+- [ ] Static, unit, integration/contract, and smoke stages have explicit exit behavior
+- [ ] Three “local pass, clean runner fail” cases were reproduced and fixed
+- [ ] Required inputs and dependencies are declared
+- [ ] Cleanup occurs after success and failure
+- [ ] Machine-readable summary artifact is produced
+- [ ] CI design record covers stages, artifacts, cache safety, timeouts, secrets, and gates
 
-## Engineering artifacts
+## Learning and handoff
 
-- [ ] Source and dependencies are reproducible
+- [ ] Advanced Git and CI source notes are complete
+- [ ] Interactive workshop evidence is recorded
 - [ ] `DECISIONS.md`, `RUNBOOK.md`, and `EVIDENCE.md` are current
-- [ ] No secrets, production data, or absolute personal paths are committed
-- [ ] Smoke test passes from a fresh session
-- [ ] Thursday demonstration can be led without mentor environment operation
+- [ ] No GitHub- or GitLab-specific pipeline implementation was introduced
+- [ ] Thursday demonstration is student-led
 
 ## Student sign-off
 

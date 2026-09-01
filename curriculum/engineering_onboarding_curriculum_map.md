@@ -4,7 +4,7 @@ Expected student time is approximately 40 hours weekly across Sunday–Thursday.
 
 | Week | Theme | Environment profile | Primary evidence |
 |---:|---|---|---|
-| 1 | Engineering Foundations and Self-directed Debugging | `week-01` | Demo, tests, custom case, decision log |
+| 1 | Advanced Git, Reproducible Verification, and CI Foundations | `week-01` | Demo, tests, custom case, decision log |
 | 2 | HTTP APIs and Contracts | `week-02` | Demo, tests, custom case, decision log |
 | 3 | Data Modeling and SQL | `week-03` | Demo, tests, custom case, decision log |
 | 4 | Document and Graph Data | `week-04` | Demo, tests, custom case, decision log |

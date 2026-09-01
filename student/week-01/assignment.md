@@ -1,8 +1,8 @@
-# Week 1: Engineering Foundations and Self-directed Debugging
+# Week 1: Advanced Git, Reproducible Verification, and CI Foundations
 
 ## Outcome
 
-Explain a failure from evidence instead of guessing.
+Recover repository state and explain why automated verification differs from a developer machine.
 
 ## Week learning pack
 
@@ -30,59 +30,63 @@ This plan assumes five ordinary eight-hour workdays. Adjust for holidays, organi
 
 The allocations below are guidance, not speed targets. Record blockers early. If the week is shortened, agree explicitly which stretch items or cases are removed.
 
-## Required learning sources — Sunday, about 2 hours
+## Required learning sources — Sunday, about 4 hours
 
-- [Git basics — Pro Git](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics) — suggested 35 min
-- [Python virtual environments](https://docs.python.org/3/tutorial/venv.html) — suggested 25 min
-- [Python pathlib](https://docs.python.org/3/library/pathlib.html) — suggested 30 min
+- [Pro Git: Debugging with Git](https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git) — suggested 40 min
+- [Git bisect reference](https://git-scm.com/docs/git-bisect) — suggested 30 min
+- [Pro Git: Reset Demystified](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified) — suggested 45 min
+- [Git reflog reference](https://git-scm.com/docs/git-reflog) — suggested 25 min
+- [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html) — suggested 45 min
+- [Reproducible Builds documentation](https://reproducible-builds.org/docs/) — suggested 30 min
 
-Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: Git, Python project environments, evidence-driven debugging, independent learning habits.
+Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: Git commit graphs, bisect, reflog recovery, conflict resolution, reviewable history, clean-room verification, CI stages and failure propagation.
 
 ## Sunday — foundations and first contact (8 hours)
 
 - Weekly planning, prior-week follow-up, and acceptance criteria — 1 hour.
-- Required sources and concept notes — 2 hours.
-- Independently start, smoke-test, and map the environment — 2 hours.
-- Guided exercise 1 — 1.5 hours.
-- Evidence, questions, and end-of-day summary — 1.5 hours.
+- Advanced Git and CI readings with concept notes — 3.5 hours.
+- Provider-neutral interactive Git workshop — 1.5 hours.
+- Create the disposable repository and map its graph — 1.5 hours.
+- Predictions, questions, and end-of-day summary — 1.5 hours.
 
 From the repository root, independently run:
 
 ```powershell
-.\training-platform\scripts\start-week.ps1 -Week 1
-.\training-platform\scripts\smoke-test.ps1 -Week 1
+.\training-platform\student\setup-week01-git-lab.ps1
+Set-Location .\student-work\week-01-git-lab
+git log --graph --decorate --oneline --all
 ```
 
-Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, active containers, logs, and persistent volumes. You are assessed on the system model and evidence—not PowerShell syntax or Windows administration.
+Identify the known-good tag, regression range, divergent branches, and messy-history branch without reading the fixture generator. Predict which evidence will support bisect, recovery, and conflict work.
 
 ## Monday — guided practice and visible case (8 hours)
 
-1. **Clone into a path containing spaces and prove every command still works** — suggested 1.5 hours.
-2. **Break one configuration value, diagnose it from evidence, and restore it** — suggested 1.5 hours.
-3. **Add a self-check command to your repository health checker** — suggested 1.5 hours.
+1. **Use git bisect to identify the exact commit that introduced a regression** — suggested 1.5 hours.
+2. **Recover deleted or rewritten work with reflog and explain which objects were still reachable** — suggested 1.5 hours.
+3. **Resolve a conflicting rebase, then restructure a messy branch into reviewable commits without losing behavior** — suggested 1.5 hours.
 
 Use roughly 1.5 hours for each remaining guided exercise, 2 hours for the prepared case, 1.5 hours for investigation/evidence, and 1.5 hours for review and refinement. Run:
 
 ```powershell
-.\training-platform\student\run-case.ps1 -Case week-01-practice
+.\training-platform\student\setup-week01-git-lab.ps1
 ```
 
-State the expected behavior before running it. Collect signals, explain recovery, and reset with `.\training-platform\student\reset-case.ps1`.
+Use the disposable repository for bisect, reflog recovery, conflict resolution, and history-cleanup labs. Recreate it under a new output path when a clean baseline is needed; the setup script never overwrites work.
 
 ## Tuesday — design and main implementation (8 hours)
 
-**Build a repository health checker.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
+**Build a provider-neutral local verification pipeline and diagnose a regression.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
 
 ## Wednesday — implementation, cases, and failure testing (8 hours)
 
 Suggested allocation: complete/refactor the implementation 3 hours; design and create a deterministic custom case 2 hours; failure and recovery tests 2 hours; evidence and code-quality pass 1 hour.
 
 ```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-01-case -Mode delay -DelayMs 700
-.\training-platform\student\run-case.ps1 -Case my-week-01-case
+.\scripts\verify.ps1
+# Then repeat from a fresh clone or disposable copy
 ```
 
-Describe the hypothesis, expected signal, safe recovery, and automated assertion. Test the happy path and at least three failures, including the custom case.
+Reproduce at least three clean-runner failures: hidden/untracked input, order or state leakage, and an undeclared dependency or environment assumption. Document the hypothesis, signal, correction, exit code, cleanup, and regression test.
 
 ## Thursday — handoff, review, and remediation (8 hours)
 
@@ -96,10 +100,10 @@ The student operates the environment during review. The mentor reviews evidence,
 
 ## Before asking the mentor for operational help
 
-1. Re-run the smoke test and copy the exact failing command.
-2. Record expected versus actual behavior and the request ID/time.
-3. Inspect container status and relevant logs.
-4. Reset only the visible case; do not delete volumes unless data reset is the hypothesis.
+1. Re-run the failing verification or Git operation and copy the exact command.
+2. Record expected versus actual graph, commit, file state, and exit code.
+3. Inspect `git status`, `git log --graph --all`, `git diff`, and `git reflog` as relevant.
+4. Recreate the disposable lab under a new path when a clean baseline is needed; never overwrite evidence.
 5. Try one controlled experiment and record the result.
 6. Ask a focused question containing evidence and what you already tried.
 
@@ -107,7 +111,8 @@ The student operates the environment during review. The mentor reviews evidence,
 
 - Working source and dependency lock/requirements file
 - Automated tests and a one-command test instruction
-- Your custom case JSON under `training-platform/student/cases/custom/`
+- Git incident evidence: bisect result, reflog recovery, conflict rationale, and cleaned history
+- Provider-neutral verification command and machine-readable result artifact
 - `DECISIONS.md` with assumptions and one rejected alternative
 - `RUNBOOK.md` with start, verify, diagnose, stop, and recover steps
 - `EVIDENCE.md` with sanitized results and conclusions
@@ -115,8 +120,8 @@ The student operates the environment during review. The mentor reviews evidence,
 
 ## Definition of done
 
-- You independently started, inspected, exercised, and reset the environment.
-- The smoke test passes before and after the work.
+- You independently created, inspected, exercised, and recovered the Git lab.
+- The provider-neutral verification command passes from a clean checkout.
 - Another engineer can reproduce the work using the supplied commands.
 - Failure behavior is bounded and tested.
 - No secrets, absolute user paths, or production data are committed.

@@ -1,10 +1,10 @@
-# Mentor guide — Week 1: Engineering Foundations and Self-directed Debugging
+# Mentor guide — Week 1: Advanced Git, Reproducible Verification, and CI Foundations
 
 > Restricted: contains review guidance and hidden assessment details.
 
 ## Review intent
 
-The student should demonstrate: explain a failure from evidence instead of guessing. Focus the review on Git evidence, debugging discipline, path portability, small commits. Do not reward extra architecture that lacks evidence, and do not operate or repair the normal environment for the student.
+The student should demonstrate: recover repository state and explain why automated verification differs from a developer machine. Focus the review on commit-graph reasoning, bisect evidence, reflog recovery, conflict correctness, reviewable history, clean-room verification, and CI failure isolation. Do not reward extra architecture that lacks evidence, and do not operate or repair the normal environment for the student.
 
 ## Suggested review sequence
 
@@ -28,7 +28,7 @@ The student should demonstrate: explain a failure from evidence instead of guess
 - A timeout or 503 does not trigger an unbounded retry loop.
 - Duplicate requests/events do not corrupt state.
 - Logs omit authorization values and secrets.
-- The custom case is deterministic and teaches a subject-specific behavior.
+- The bisect test is deterministic; reflog recovery is explained accurately; conflict resolution preserves combined intent; and the verification command fails correctly in a clean environment.
 
 ## Red flags
 

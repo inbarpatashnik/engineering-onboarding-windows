@@ -1,41 +1,53 @@
-# Exercise 4: main project and custom case
+# Exercise 4: provider-neutral verification pipeline
 
-**Time:** 16 hours across Tuesday and Wednesday  
-**Project:** Build a repository health checker  
-**Exit capability:** Explain a failure from evidence instead of guessing.
+**Time:** 15 hours across Tuesday and Wednesday  
+**Objective:** Build one deterministic verification contract that behaves the same on a developer machine and a clean automated runner.
 
-## Acceptance criteria
+## Project
 
-1. Define inputs, outputs, invariants, and explicit non-goals.
-2. Implement a reviewable vertical slice before adding breadth.
-3. Preserve correlation evidence and fail clearly on invalid inputs.
-4. Test the happy path, three failures, restart/recovery where relevant, and the custom case.
-5. Document one rejected alternative and its tradeoff.
-
-## Custom-case design
-
-Choose `delay`, `unavailable`, or `malformed` only as a starting mechanism. Make the case subject-specific through the hypothesis, workload, expected signal, client behavior, and assertion.
+Create one documented entry point such as:
 
 ```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-01-case -Mode delay -DelayMs 700 -LearningGoal "Replace with the specific concept being tested"
-.\training-platform\student\run-case.ps1 -Case my-week-01-case
+.\scripts\verify.ps1
 ```
 
-Edit the generated JSON to make the learning goal and expected signal precise. Never edit mentor presets.
+PowerShell should be only a thin launcher when portable project tooling can implement the checks. Do not write GitHub Actions, GitLab CI, Jenkins, or other provider configuration this week.
 
-## Review checkpoints
+## Required stages
 
-- Tuesday midday: acceptance criteria and interface sketch
-- Tuesday end: vertical slice and initial tests
-- Wednesday midday: custom case and failure matrix
-- Wednesday end: complete tests, runbook, evidence, and clean smoke test
+1. Validate tools and configuration without printing secrets.
+2. Check formatting or inexpensive static rules.
+3. Run unit tests.
+4. Run integration or contract tests.
+5. Start the training environment and perform a bounded smoke check.
+6. Produce a small machine-readable summary artifact.
+7. Return nonzero on every failed required stage.
+8. Clean up resources it started, even after failure.
 
-## Hints
+## Clean-runner cases
 
-- Reduce scope before adding abstractions.
-- Turn every surprising observation into a minimal reproduction.
-- A case is valuable when it can disprove an assumption, not merely make the system fail.
+Reproduce and fix at least three causes of “local pass, clean runner fail”:
+
+- An untracked or ignored file required by a test.
+- Order-dependent tests or leaked process state.
+- An undeclared dependency or environment variable.
+- A case-sensitive path or working-directory assumption.
+- A cached/generated artifact masking a missing build step.
+
+Use a fresh clone or disposable copy to simulate the runner. The command must not depend on GitHub or GitLab.
+
+## CI design record
+
+Define stages, dependencies, fail-fast versus always-run behavior, artifacts, cache safety, timeout budget, secret boundary, and blocking checks. Explain how any CI provider can invoke the same contract without changing semantics.
+
+## Tests
+
+- Passing clean run
+- Failing static/unit stage with correct exit code
+- Integration timeout with cleanup proof
+- Missing dependency/configuration with a clear message
+- One hidden-state regression converted to a deterministic test
 
 ## Done when
 
-Another student can clone, run, test, exercise, recover, and explain the project from your artifacts without mentor operation.
+Another engineer can run one command from a clean checkout, understand every stage, locate failure evidence, and connect the contract to any CI system.

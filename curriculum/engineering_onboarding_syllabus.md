@@ -4,12 +4,12 @@
 
 Each week combines concepts, a constrained build, evidence collection, review, and reflection. Depth labels are **Deep** (implement and debug), **Working familiarity** (use safely and explain tradeoffs), and **Awareness** (recognize and know when to seek help).
 
-## Week 1: Engineering Foundations and Self-directed Debugging
+## Week 1: Advanced Git, Reproducible Verification, and CI Foundations
 
 - **Depth:** Deep
-- **Subjects:** Git, Python project environments, evidence-driven debugging, independent learning habits.
-- **Applied work:** Build a repository health checker.
-- **Exit capability:** Explain a failure from evidence instead of guessing.
+- **Subjects:** Git commit graphs, bisect, reflog recovery, conflict resolution, reviewable history, clean-room verification, CI stages and failure propagation.
+- **Applied work:** Build a provider-neutral local verification pipeline and diagnose a regression.
+- **Exit capability:** Recover repository state and explain why automated verification differs from a developer machine.
 
 ## Week 2: HTTP APIs and Contracts
 

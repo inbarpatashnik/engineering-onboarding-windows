@@ -1,9 +1,0 @@
-{
-  "name": "week-01-practice",
-  "week": 1,
-  "mode": "delay",
-  "delay_ms": 700,
-  "failure_rate": 0,
-  "learning_goal": "Break one configuration value, diagnose it from evidence, and restore it",
-  "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
-}

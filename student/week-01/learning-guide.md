@@ -1,6 +1,6 @@
-# Week 1 learning guide: Engineering Foundations and Self-directed Debugging
+# Week 1 learning guide: Advanced Git, Reproducible Verification, and CI Foundations
 
-Use this page as the daily navigator. The goal is explain a failure from evidence instead of guessing. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
+Use this page as the daily navigator. The goal is recover repository state and explain why automated verification differs from a developer machine. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
 
 ## Sunday — foundations
 

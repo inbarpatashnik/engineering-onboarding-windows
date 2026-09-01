@@ -184,6 +184,7 @@ training-platform/mentor/incident-presets/week-12.json
 training-platform/mentor/incident-presets/week-13.json
 training-platform/mentor/reset-faults.ps1
 training-platform/mentor/set-fault.ps1
+training-platform/python/build_week01_git_lab.py
 training-platform/python/generate_training_data.py
 training-platform/requirements.txt
 training-platform/scripts/common.ps1
@@ -197,7 +198,6 @@ training-platform/services/simulator/Dockerfile
 training-platform/services/simulator/app.py
 training-platform/student/README.md
 training-platform/student/cases/custom/README.md
-training-platform/student/cases/week-01-practice.json
 training-platform/student/cases/week-02-practice.json
 training-platform/student/cases/week-03-practice.json
 training-platform/student/cases/week-04-practice.json
@@ -213,4 +213,6 @@ training-platform/student/cases/week-13-practice.json
 training-platform/student/new-case.ps1
 training-platform/student/reset-case.ps1
 training-platform/student/run-case.ps1
+training-platform/student/setup-week01-git-lab.ps1
 training-platform/tests/test_generator.py
+training-platform/tests/test_week01_git_lab.py
