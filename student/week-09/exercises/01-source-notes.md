@@ -1,7 +1,7 @@
 # Exercise 1: active source notes
 
-**Time:** 2 hours  
-**Objective:** Build a working mental model of timeouts, retries, backoff, circuit breakers, bulkheads before implementation.
+**Time:** 2 hours
+**Objective:** Build a working mental model of system mapping, boundaries, compatibility, ADRs, staged change, mixed versions, rollback before implementation.
 
 ## Steps
 

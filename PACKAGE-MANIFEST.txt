@@ -223,3 +223,7 @@ training-platform/week-06/consume-samples.ps1
 training-platform/week-06/diagnose.ps1
 training-platform/week-06/fallback-client-lab.py
 training-platform/week-06/produce-samples.ps1
+training-platform/week-10/README.md
+training-platform/week-10/auth-token-lab.py
+training-platform/week-10/requirements.txt
+training-platform/week-10/setup.ps1

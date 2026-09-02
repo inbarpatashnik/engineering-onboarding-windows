@@ -1,7 +1,7 @@
 # Exercise 1: active source notes
 
-**Time:** 2 hours  
-**Objective:** Build a working mental model of threat modeling, secrets, authn/authz, input safety before implementation.
+**Time:** 4 hours
+**Objective:** Build a working mental model of threat modeling, authentication, authorization, asymmetric keys, tokens, OAuth roles, secrets, input safety before implementation.
 
 ## Steps
 

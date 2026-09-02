@@ -5,7 +5,7 @@
 
 ## Scenario
 
-Build a deadline and retry budget that remains safe when the dependency is slow, unavailable, and recovering.
+Propose a cross-API/data/event change to an unfamiliar service. Show boundaries, compatibility, staged rollout, mixed-version behavior, rollback, and the evidence required at each gate.
 
 ## Produce
 

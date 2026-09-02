@@ -1,7 +1,7 @@
 # Exercise 1: active source notes
 
-**Time:** 2 hours  
-**Objective:** Build a working mental model of profiling, load testing, queues, saturation, capacity estimates before implementation.
+**Time:** 3 hours
+**Objective:** Build a working mental model of profiling, load testing, percentiles, saturation, queues, timeouts, retry budgets, jitter, backpressure, circuit breakers, recovery before implementation.
 
 ## Steps
 

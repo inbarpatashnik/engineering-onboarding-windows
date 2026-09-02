@@ -1,41 +1,22 @@
-# Exercise 4: main project and custom case
+# Exercise 4: design and stage a backward-compatible change
 
-**Time:** 16 hours across Tuesday and Wednesday  
-**Project:** Harden a flaky dependency integration  
-**Exit capability:** Avoid retry storms and bound failure impact.
+**Time:** 16 hours
 
 ## Acceptance criteria
 
-1. Define inputs, outputs, invariants, and explicit non-goals.
-2. Implement a reviewable vertical slice before adding breadth.
-3. Preserve correlation evidence and fail clearly on invalid inputs.
-4. Test the happy path, three failures, restart/recovery where relevant, and the custom case.
-5. Document one rejected alternative and its tradeoff.
+1. Start with a written problem, users, constraints, invariants, and non-goals.
+2. Map existing ownership and contracts before choosing a solution.
+3. Record at least two viable alternatives in an ADR and explain the tradeoff.
+4. Preserve compatibility across APIs, stored data, and events.
+5. Break implementation into independently deployable and observable stages.
+6. Define mixed-version behavior and rollback at every irreversible boundary.
+7. Attach tests and observable evidence to each rollout gate.
+8. Identify security, operability, performance, and failure-mode consequences.
 
-## Custom-case design
+## Required stages
 
-Choose `delay`, `unavailable`, or `malformed` only as a starting mechanism. Make the case subject-specific through the hypothesis, workload, expected signal, client behavior, and assertion.
+Characterize → introduce compatibility seam → dual-read or dual-write only when justified → migrate/backfill → switch behavior → remove legacy path after evidence. Do not use a flag as a substitute for compatibility analysis.
 
-```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-09-case -Mode delay -DelayMs 700 -LearningGoal "Replace with the specific concept being tested"
-.\training-platform\student\run-case.ps1 -Case my-week-09-case
-```
+## Review scenario
 
-Edit the generated JSON to make the learning goal and expected signal precise. Never edit mentor presets.
-
-## Review checkpoints
-
-- Tuesday midday: acceptance criteria and interface sketch
-- Tuesday end: vertical slice and initial tests
-- Wednesday midday: custom case and failure matrix
-- Wednesday end: complete tests, runbook, evidence, and clean smoke test
-
-## Hints
-
-- Reduce scope before adding abstractions.
-- Turn every surprising observation into a minimal reproduction.
-- A case is valuable when it can disprove an assumption, not merely make the system fail.
-
-## Done when
-
-Another student can clone, run, test, exercise, recover, and explain the project from your artifacts without mentor operation.
+The rollout is paused halfway through while old and new instances both serve traffic. Demonstrate correct behavior, detection of divergence, and a safe next action.

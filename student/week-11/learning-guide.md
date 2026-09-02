@@ -1,6 +1,6 @@
-# Week 11 learning guide: Performance and Capacity
+# Week 11 learning guide: Performance, Capacity, and Resilience
 
-Use this page as the daily navigator. The goal is show before/after evidence without hiding tradeoffs. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
+Use this page as the daily navigator. The goal is measure capacity and prevent failure amplification. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
 
 ## Sunday — foundations
 

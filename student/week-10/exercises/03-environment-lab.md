@@ -1,45 +1,11 @@
-# Exercise 3: environment lab and visible case
+# Exercise 3: authentication and signed-token lab
 
-**Time:** 4 hours across Sunday and Monday  
-**Objective:** Learn threat modeling, secrets, authn/authz, input safety by operating and observing the supplied environment.
+**Time:** 5 hours
 
-## Baseline
+Follow `training-platform\week-10\README.md`. Generate a synthetic RSA key pair, issue tokens with the private key, publish the public key as JWKS, and verify tokens as a resource server.
 
-```powershell
-.\training-platform\scripts\start-week.ps1 -Week 10
-.\training-platform\scripts\smoke-test.ps1 -Week 10
-```
+## Required cases
 
-Map active services, ports, health checks, volumes, `/api/state`, and relevant logs. Draw a small request/data flow and identify where state persists.
+Valid token, modified payload, expired token, not-yet-valid token, wrong issuer, wrong audience, missing scope, unknown key ID, disallowed algorithm, key rotation overlap, valid identity without resource permission, and a bearer token replay.
 
-## Prepared case
-
-Read `training-platform/student/cases/week-10-practice.json`. Without running it, predict status, latency/parsing behavior, state, logs, and recovery. Then run:
-
-```powershell
-.\training-platform\student\run-case.ps1 -Case week-10-practice
-```
-
-Perform at least five repeated observations. Explain stable versus variable behavior. Reset the case and prove recovery:
-
-```powershell
-.\training-platform\student\reset-case.ps1
-.\training-platform\scripts\smoke-test.ps1 -Week 10
-```
-
-## Expected observations
-
-- Baseline health remains distinguishable from dependency behavior.
-- Requests carry identifiers that connect client evidence and logs.
-- The case creates the behavior described in its JSON without corrupting source files.
-- Reset restores normal dependency behavior without deleting student work.
-
-## Self-check and hints
-
-- If evidence is inconsistent, check whether the case uses a failure rate and collect more samples.
-- If the API is unreachable, inspect container status before changing code.
-- If reset appears ineffective, query `/api/state` and repeat with a new request ID.
-
-## Done when
-
-`EVIDENCE.md` contains the system map, predictions, repeated observations, explanation, recovery proof, and one automated assertion.
+For every rejection, record which validation layer rejected it and whether the result is authentication failure, authorization denial, or malformed input. Never use real organizational credentials or keys.

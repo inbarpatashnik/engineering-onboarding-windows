@@ -2,13 +2,13 @@
 
 These exercises isolate one idea at a time before the main project. Keep each experiment small, reversible, and evidenced.
 
-## Exercise 1: Measure a timeout budget across retries
+## Exercise 1: Map an unfamiliar service and its synchronous/asynchronous boundaries
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Measure a timeout budget across retries. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Map an unfamiliar service and its synchronous/asynchronous boundaries. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 
@@ -17,13 +17,13 @@ Measure a timeout budget across retries. Define expected behavior first, perform
 - Did you capture an observable signal rather than an opinion?
 - Does the environment pass its smoke test afterward?
 
-## Exercise 2: Compare fixed delay with jittered backoff
+## Exercise 2: Design a backward-compatible API, data, and event change
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Compare fixed delay with jittered backoff. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Design a backward-compatible API, data, and event change. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 
@@ -32,13 +32,13 @@ Compare fixed delay with jittered backoff. Define expected behavior first, perfo
 - Did you capture an observable signal rather than an opinion?
 - Does the environment pass its smoke test afterward?
 
-## Exercise 3: Create a dependency recovery case and observe circuit state
+## Exercise 3: Break the change into deployable stages with mixed-version and rollback tests
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Create a dependency recovery case and observe circuit state. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Break the change into deployable stages with mixed-version and rollback tests. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 

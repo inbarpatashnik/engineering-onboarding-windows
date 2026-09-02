@@ -4,6 +4,6 @@
   "mode": "unavailable",
   "delay_ms": 0,
   "failure_rate": 0.25,
-  "learning_goal": "Compare fixed delay with jittered backoff",
+  "learning_goal": "Design a backward-compatible API, data, and event change",
   "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
 }

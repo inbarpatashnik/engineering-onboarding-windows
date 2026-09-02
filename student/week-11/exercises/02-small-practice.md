@@ -2,13 +2,13 @@
 
 These exercises isolate one idea at a time before the main project. Keep each experiment small, reversible, and evidenced.
 
-## Exercise 1: Establish a repeatable latency baseline
+## Exercise 1: Establish repeatable load and latency-percentile baselines
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Establish a repeatable latency baseline. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Establish repeatable load and latency-percentile baselines. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 
@@ -17,13 +17,13 @@ Establish a repeatable latency baseline. Define expected behavior first, perform
 - Did you capture an observable signal rather than an opinion?
 - Does the environment pass its smoke test afterward?
 
-## Exercise 2: Create CPU, latency, and saturation cases
+## Exercise 2: Measure retry amplification, saturation, queues, and recovery
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Create CPU, latency, and saturation cases. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Measure retry amplification, saturation, queues, and recovery. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 
@@ -32,13 +32,13 @@ Create CPU, latency, and saturation cases. Define expected behavior first, perfo
 - Did you capture an observable signal rather than an opinion?
 - Does the environment pass its smoke test afterward?
 
-## Exercise 3: Profile one bottleneck and show before/after percentiles
+## Exercise 3: Add timeout budgets, jitter, concurrency limits, backpressure, and circuit breaking one at a time
 
 **Suggested time:** 1.5 hours
 
 ### Task
 
-Profile one bottleneck and show before/after percentiles. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+Add timeout budgets, jitter, concurrency limits, backpressure, and circuit breaking one at a time. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
 
 ### Self-check
 

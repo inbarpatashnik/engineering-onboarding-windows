@@ -1,8 +1,8 @@
-# Week 10: Security Fundamentals
+# Week 10: Security, Authentication, and Authorization
 
 ## Outcome
 
-Identify trust boundaries and verify controls.
+Identify trust boundaries and correctly validate identity and permissions.
 
 ## Week learning pack
 
@@ -14,6 +14,10 @@ Identify trust boundaries and verify controls.
 6. [Exercise 4: project and custom case](exercises/04-project-and-custom-case.md)
 7. [Exercise 5: weekly synthesis](exercises/05-weekly-synthesis.md)
 8. [Deliverables checklist](deliverables-checklist.md)
+
+## Featured authentication lab
+
+Complete the [local asymmetric-token lab](../../training-platform/week-10/README.md). It uses synthetic identities and keys only. Authentication proves identity; authorization remains a separate resource decision.
 
 ## Weekly rhythm: Sunday–Thursday, approximately 40 hours
 
@@ -30,20 +34,23 @@ This plan assumes five ordinary eight-hour workdays. Adjust for holidays, organi
 
 The allocations below are guidance, not speed targets. Record blockers early. If the week is shortened, agree explicitly which stretch items or cases are removed.
 
-## Required learning sources — Sunday, about 2 hours
+## Required learning sources — Sunday, about 4 hours
 
-- [OWASP threat modeling](https://owasp.org/www-project-threat-modeling/) — suggested 50 min
-- [OWASP secrets management](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) — suggested 40 min
+- [OWASP authentication cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) — suggested 40 min
+- [OWASP authorization cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) — suggested 40 min
+- [RFC 6750: bearer token usage](https://www.rfc-editor.org/rfc/rfc6750.html) — suggested 35 min
+- [RFC 8725: JWT best current practices](https://www.rfc-editor.org/rfc/rfc8725.html) — suggested 50 min
+- [RFC 9700: OAuth 2.0 security best current practice](https://www.rfc-editor.org/rfc/rfc9700.html) — suggested 50 min
 
-Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: threat modeling, secrets, authn/authz, input safety.
+Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: threat modeling, authentication, authorization, asymmetric keys, tokens, OAuth roles, secrets, input safety.
 
 ## Sunday — foundations and first contact (8 hours)
 
 - Weekly planning, prior-week follow-up, and acceptance criteria — 1 hour.
-- Required sources and concept notes — 2 hours.
-- Independently start, smoke-test, and map the environment — 2 hours.
-- Guided exercise 1 — 1.5 hours.
-- Evidence, questions, and end-of-day summary — 1.5 hours.
+- Required sources and authentication concept map — 4 hours.
+- Start the asymmetric-token lab and map its trust boundary — 2 hours.
+- First validation experiment — 0.5 hour.
+- Evidence, questions, and end-of-day summary — 0.5 hour.
 
 From the repository root, independently run:
 
@@ -56,9 +63,9 @@ Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, active con
 
 ## Monday — guided practice and visible case (8 hours)
 
-1. **Draw trust boundaries for the simulator** — suggested 1.5 hours.
-2. **Create malicious-input and missing-authorization cases** — suggested 1.5 hours.
-3. **Prove secrets and authorization headers never enter logs** — suggested 1.5 hours.
+1. **Distinguish authentication, authorization, identity, credentials, roles, scopes, and ownership** — suggested 1.5 hours.
+2. **Sign and verify tokens with a private/public key pair and reject invalid claims** — suggested 1.5 hours.
+3. **Create expiry, audience, issuer, scope, rotation, replay, and token-leakage cases** — suggested 1.5 hours.
 
 Use roughly 1.5 hours for each remaining guided exercise, 2 hours for the prepared case, 1.5 hours for investigation/evidence, and 1.5 hours for review and refinement. Run:
 
@@ -70,7 +77,7 @@ State the expected behavior before running it. Collect signals, explain recovery
 
 ## Tuesday — design and main implementation (8 hours)
 
-**Threat-model and secure a service endpoint.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
+**Secure a resource API and verify signed access tokens.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
 
 ## Wednesday — implementation, cases, and failure testing (8 hours)
 

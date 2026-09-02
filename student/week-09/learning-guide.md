@@ -1,6 +1,6 @@
-# Week 9 learning guide: Reliability Patterns
+# Week 9 learning guide: System Design and Safe Change
 
-Use this page as the daily navigator. The goal is avoid retry storms and bound failure impact. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
+Use this page as the daily navigator. The goal is change an unfamiliar system without breaking its contracts. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
 
 ## Sunday — foundations
 

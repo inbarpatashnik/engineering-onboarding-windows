@@ -1,31 +1,12 @@
 # Week 10 deliverables checklist
 
-## Learning
-
-- [ ] Core reading notes link to each source and relevant sections
-- [ ] Workshop evidence is complete and contains no sensitive data
-- [ ] Predictions were checked against environment observations
-
-## Exercises
-
-- [ ] Three small exercises include expectation, evidence, cleanup, and self-check
-- [ ] Visible case includes predictions, repeated observations, and recovery proof
-- [ ] Main project meets written acceptance criteria
-- [ ] Custom case JSON has a specific learning goal and expected signal
-- [ ] Happy path, three failures, and recovery/restart behavior are tested
-- [ ] Weekly synthesis and failure matrix are complete
-
-## Engineering artifacts
-
-- [ ] Source and dependencies are reproducible
-- [ ] `DECISIONS.md`, `RUNBOOK.md`, and `EVIDENCE.md` are current
-- [ ] No secrets, production data, or absolute personal paths are committed
-- [ ] Smoke test passes from a fresh session
-- [ ] Thursday demonstration can be led without mentor environment operation
-
-## Student sign-off
-
-- Commit reviewed:
-- Remaining risks:
-- Questions for mentor:
-- Scope removed because of shortened week, if any:
+- [ ] Threat model identifies assets, actors, trust boundaries, and prioritized abuse cases
+- [ ] Authentication and authorization are implemented and explained separately
+- [ ] Private/public key signing and verification are demonstrated with synthetic keys
+- [ ] Token type, algorithm, signature, issuer, audience, time, subject, and required claims are validated
+- [ ] Scope/role and resource-ownership authorization are tested separately
+- [ ] Expiry, not-before, tampering, wrong audience/issuer, unknown key, and replay cases are covered
+- [ ] Key rotation includes public-key overlap and bounded JWKS caching behavior
+- [ ] Bearer tokens, private keys, secrets, and sensitive claims are absent from logs
+- [ ] OAuth roles and common flows are explained without provider-specific administration
+- [ ] 401/403 behavior and internal evidence are intentionally limited and tested

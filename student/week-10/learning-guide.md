@@ -1,6 +1,6 @@
-# Week 10 learning guide: Security Fundamentals
+# Week 10 learning guide: Security, Authentication, and Authorization
 
-Use this page as the daily navigator. The goal is identify trust boundaries and verify controls. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
+Use this page as the daily navigator. The goal is identify trust boundaries and correctly validate identity and permissions. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
 
 ## Sunday — foundations
 

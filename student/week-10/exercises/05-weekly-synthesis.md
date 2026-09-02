@@ -5,7 +5,7 @@
 
 ## Scenario
 
-Present a threat model with assets, actors, trust boundaries, prioritized threats, controls, and verification evidence.
+For each protected request explain who issued the credential, for whom, for which service and operation, until when, and why the resource server should trust it.
 
 ## Produce
 

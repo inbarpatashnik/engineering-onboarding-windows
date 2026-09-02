@@ -1,45 +1,25 @@
-# Exercise 3: environment lab and visible case
+# Exercise 3: system map and safe-change design lab
 
-**Time:** 4 hours across Sunday and Monday  
-**Objective:** Learn timeouts, retries, backoff, circuit breakers, bulkheads by operating and observing the supplied environment.
+**Time:** 5 hours
 
-## Baseline
+Start the Week 9 environment and treat it as an unfamiliar service. Do not propose changes until you can show its current contracts.
 
-```powershell
-.\training-platform\scripts\start-week.ps1 -Week 9
-.\training-platform\scripts\smoke-test.ps1 -Week 9
-```
+## Build the map
 
-Map active services, ports, health checks, volumes, `/api/state`, and relevant logs. Draw a small request/data flow and identify where state persists.
+Identify entry points, callers, synchronous dependencies, asynchronous boundaries, persistent state, caches, ownership, trust boundaries, observable signals, and failure propagation. Mark facts, assumptions, and unknowns differently.
 
-## Prepared case
+## Proposed change
 
-Read `training-platform/student/cases/week-09-practice.json`. Without running it, predict status, latency/parsing behavior, state, logs, and recovery. Then run:
+Add an asynchronous ownership-change workflow while preserving the existing synchronous API and stored data. Your design must allow old and new producers, consumers, and API clients to overlap during rollout.
 
-```powershell
-.\training-platform\student\run-case.ps1 -Case week-09-practice
-```
+## Required experiments
 
-Perform at least five repeated observations. Explain stable versus variable behavior. Reset the case and prove recovery:
+1. Characterize the current API, data, and event contracts with executable checks.
+2. Introduce an additive representation that old readers ignore safely.
+3. Simulate old writer/new reader, new writer/old reader, and mixed event versions.
+4. Show what happens when rollout stops after each stage.
+5. Rehearse rollback without deleting or corrupting data written by the new version.
 
-```powershell
-.\training-platform\student\reset-case.ps1
-.\training-platform\scripts\smoke-test.ps1 -Week 9
-```
+## Output
 
-## Expected observations
-
-- Baseline health remains distinguishable from dependency behavior.
-- Requests carry identifiers that connect client evidence and logs.
-- The case creates the behavior described in its JSON without corrupting source files.
-- Reset restores normal dependency behavior without deleting student work.
-
-## Self-check and hints
-
-- If evidence is inconsistent, check whether the case uses a failure rate and collect more samples.
-- If the API is unreachable, inspect container status before changing code.
-- If reset appears ineffective, query `/api/state` and repeat with a new request ID.
-
-## Done when
-
-`EVIDENCE.md` contains the system map, predictions, repeated observations, explanation, recovery proof, and one automated assertion.
+A system-context diagram, dependency/data-flow diagram, contract inventory, risk list, compatibility matrix, staged rollout, rollback plan, and evidence gates.

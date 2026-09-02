@@ -1,45 +1,16 @@
-# Exercise 3: environment lab and visible case
+# Exercise 3: load, amplification, and recovery lab
 
-**Time:** 4 hours across Sunday and Monday  
-**Objective:** Learn profiling, load testing, queues, saturation, capacity estimates by operating and observing the supplied environment.
+**Time:** 6 hours
 
-## Baseline
+Create a repeatable staged workload. Record request rate, throughput, error rate, latency percentiles, concurrency, queue depth where available, dependency calls, retries, and recovery time.
 
-```powershell
-.\training-platform\scripts\start-week.ps1 -Week 11
-.\training-platform\scripts\smoke-test.ps1 -Week 11
-```
+Run controlled cases in this order:
 
-Map active services, ports, health checks, volumes, `/api/state`, and relevant logs. Draw a small request/data flow and identify where state persists.
+1. Healthy baseline.
+2. Increased latency without retries.
+3. Partial failure with immediate retries.
+4. Same failure with a total deadline, bounded attempts, exponential backoff, and jitter.
+5. Add a concurrency limit or bounded queue and define overload behavior.
+6. Open and recover a circuit breaker; observe the recovery surge.
 
-## Prepared case
-
-Read `training-platform/student/cases/week-11-practice.json`. Without running it, predict status, latency/parsing behavior, state, logs, and recovery. Then run:
-
-```powershell
-.\training-platform\student\run-case.ps1 -Case week-11-practice
-```
-
-Perform at least five repeated observations. Explain stable versus variable behavior. Reset the case and prove recovery:
-
-```powershell
-.\training-platform\student\reset-case.ps1
-.\training-platform\scripts\smoke-test.ps1 -Week 11
-```
-
-## Expected observations
-
-- Baseline health remains distinguishable from dependency behavior.
-- Requests carry identifiers that connect client evidence and logs.
-- The case creates the behavior described in its JSON without corrupting source files.
-- Reset restores normal dependency behavior without deleting student work.
-
-## Self-check and hints
-
-- If evidence is inconsistent, check whether the case uses a failure rate and collect more samples.
-- If the API is unreachable, inspect container status before changing code.
-- If reset appears ineffective, query `/api/state` and repeat with a new request ID.
-
-## Done when
-
-`EVIDENCE.md` contains the system map, predictions, repeated observations, explanation, recovery proof, and one automated assertion.
+Change one mechanism at a time. Plot or tabulate offered load versus completed useful work. Explain when an apparently lower error rate hides worse latency or resource use.

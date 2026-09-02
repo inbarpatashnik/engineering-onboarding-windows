@@ -12,9 +12,9 @@ Expected student time is approximately 40 hours weekly across Sunday–Thursday.
 | 6 | Events and Messaging | `week-06` | Demo, tests, custom case, decision log |
 | 7 | Testing Strategy | `week-07` | Demo, tests, custom case, decision log |
 | 8 | Observability | `week-08` | Demo, tests, custom case, decision log |
-| 9 | Reliability Patterns | `week-09` | Demo, tests, custom case, decision log |
-| 10 | Security Fundamentals | `week-10` | Demo, tests, custom case, decision log |
-| 11 | Performance and Capacity | `week-11` | Demo, tests, custom case, decision log |
+| 9 | System Design and Safe Change | `week-09` | Demo, tests, custom case, decision log |
+| 10 | Security, Authentication, and Authorization | `week-10` | Demo, tests, custom case, decision log |
+| 11 | Performance, Capacity, and Resilience | `week-11` | Demo, tests, custom case, decision log |
 | 12 | Delivery and Operations | `week-12` | Demo, tests, custom case, decision log |
 | 13 | Capstone Incident | `week-13` | Demo, tests, custom case, decision log |
 

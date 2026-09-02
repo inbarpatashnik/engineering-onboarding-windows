@@ -1,41 +1,23 @@
-# Exercise 4: main project and custom case
+# Exercise 4: keep a partially failing workload stable
 
-**Time:** 16 hours across Tuesday and Wednesday  
-**Project:** Measure and improve a slow workload  
-**Exit capability:** Show before/after evidence without hiding tradeoffs.
+**Time:** 15 hours
 
 ## Acceptance criteria
 
-1. Define inputs, outputs, invariants, and explicit non-goals.
-2. Implement a reviewable vertical slice before adding breadth.
-3. Preserve correlation evidence and fail clearly on invalid inputs.
-4. Test the happy path, three failures, restart/recovery where relevant, and the custom case.
-5. Document one rejected alternative and its tradeoff.
+1. Define a representative workload, correctness invariant, service-level target, and resource budget.
+2. Establish repeatable baseline percentiles and throughput before optimization.
+3. Profile one demonstrated bottleneck; do not optimize by intuition alone.
+4. Apply an end-to-end timeout budget and bounded retry policy with jitter.
+5. Limit concurrency or queue growth and define admission/backpressure behavior.
+6. Use circuit breaking only with explicit states, thresholds, probes, and recovery behavior.
+7. Measure retry amplification and useful work during degradation and recovery.
+8. Preserve correctness and idempotency while shedding or retrying work.
+9. Show before/after evidence and identify the bottleneck or tradeoff that moved elsewhere.
 
-## Custom-case design
+## Scope control
 
-Choose `delay`, `unavailable`, or `malformed` only as a starting mechanism. Make the case subject-specific through the hypothesis, workload, expected signal, client behavior, and assertion.
+Implement only the mechanisms required by measured evidence. Extensive profiler mechanics, multiple load tools, infrastructure autoscaling, and provider capacity configuration are optional.
 
-```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-11-case -Mode delay -DelayMs 700 -LearningGoal "Replace with the specific concept being tested"
-.\training-platform\student\run-case.ps1 -Case my-week-11-case
-```
+## Final evidence
 
-Edit the generated JSON to make the learning goal and expected signal precise. Never edit mentor presets.
-
-## Review checkpoints
-
-- Tuesday midday: acceptance criteria and interface sketch
-- Tuesday end: vertical slice and initial tests
-- Wednesday midday: custom case and failure matrix
-- Wednesday end: complete tests, runbook, evidence, and clean smoke test
-
-## Hints
-
-- Reduce scope before adding abstractions.
-- Turn every surprising observation into a minimal reproduction.
-- A case is valuable when it can disprove an assumption, not merely make the system fail.
-
-## Done when
-
-Another student can clone, run, test, exercise, recover, and explain the project from your artifacts without mentor operation.
+Workload definition, raw results, p50/p95/p99, throughput, errors, saturation, retry multiplier, recovery timeline, profiler evidence, chosen controls, rejected alternatives, and capacity estimate with assumptions.

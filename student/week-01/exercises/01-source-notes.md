@@ -1,6 +1,6 @@
 # Exercise 1: active source notes
 
-**Time:** 2 hours  
+**Time:** 2 hours
 **Objective:** Build a working mental model of Git commit graphs, bisect, reflog recovery, conflict resolution, reviewable history, clean-room verification, CI stages and failure propagation before implementation.
 
 ## Steps

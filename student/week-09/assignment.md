@@ -1,8 +1,8 @@
-# Week 9: Reliability Patterns
+# Week 9: System Design and Safe Change
 
 ## Outcome
 
-Avoid retry storms and bound failure impact.
+Change an unfamiliar system without breaking its contracts.
 
 ## Week learning pack
 
@@ -32,10 +32,11 @@ The allocations below are guidance, not speed targets. Record blockers early. If
 
 ## Required learning sources — Sunday, about 2 hours
 
-- [AWS Builders' Library: timeouts, retries and backoff](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — suggested 60 min
-- [Azure retry pattern](https://learn.microsoft.com/azure/architecture/patterns/retry) — suggested 30 min
+- [Microsoft: API design and implementation](https://learn.microsoft.com/azure/architecture/best-practices/api-design) — suggested 45 min
+- [Martin Fowler: Branch By Abstraction](https://martinfowler.com/bliki/BranchByAbstraction.html) — suggested 35 min
+- [AWS Builders' Library: ensuring rollback safety](https://aws.amazon.com/builders-library/ensuring-rollback-safety-during-deployments/) — suggested 45 min
 
-Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: timeouts, retries, backoff, circuit breakers, bulkheads.
+Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: system mapping, boundaries, compatibility, ADRs, staged change, mixed versions, rollback.
 
 ## Sunday — foundations and first contact (8 hours)
 
@@ -56,9 +57,9 @@ Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, active con
 
 ## Monday — guided practice and visible case (8 hours)
 
-1. **Measure a timeout budget across retries** — suggested 1.5 hours.
-2. **Compare fixed delay with jittered backoff** — suggested 1.5 hours.
-3. **Create a dependency recovery case and observe circuit state** — suggested 1.5 hours.
+1. **Map an unfamiliar service and its synchronous/asynchronous boundaries** — suggested 1.5 hours.
+2. **Design a backward-compatible API, data, and event change** — suggested 1.5 hours.
+3. **Break the change into deployable stages with mixed-version and rollback tests** — suggested 1.5 hours.
 
 Use roughly 1.5 hours for each remaining guided exercise, 2 hours for the prepared case, 1.5 hours for investigation/evidence, and 1.5 hours for review and refinement. Run:
 
@@ -70,7 +71,7 @@ State the expected behavior before running it. Collect signals, explain recovery
 
 ## Tuesday — design and main implementation (8 hours)
 
-**Harden a flaky dependency integration.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
+**Design and stage a backward-compatible system change.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
 
 ## Wednesday — implementation, cases, and failure testing (8 hours)
 

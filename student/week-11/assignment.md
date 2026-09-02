@@ -1,8 +1,8 @@
-# Week 11: Performance and Capacity
+# Week 11: Performance, Capacity, and Resilience
 
 ## Outcome
 
-Show before/after evidence without hiding tradeoffs.
+Measure capacity and prevent failure amplification.
 
 ## Week learning pack
 
@@ -14,6 +14,10 @@ Show before/after evidence without hiding tradeoffs.
 6. [Exercise 4: project and custom case](exercises/04-project-and-custom-case.md)
 7. [Exercise 5: weekly synthesis](exercises/05-weekly-synthesis.md)
 8. [Deliverables checklist](deliverables-checklist.md)
+
+## Combined performance and reliability focus
+
+This week absorbs the former standalone reliability-pattern week. Every timeout, retry, backoff, limiter, and circuit breaker must be evaluated under measured load and recovery—not implemented as an isolated utility.
 
 ## Weekly rhythm: Sunday–Thursday, approximately 40 hours
 
@@ -30,20 +34,22 @@ This plan assumes five ordinary eight-hour workdays. Adjust for holidays, organi
 
 The allocations below are guidance, not speed targets. Record blockers early. If the week is shortened, agree explicitly which stretch items or cases are removed.
 
-## Required learning sources — Sunday, about 2 hours
+## Required learning sources — Sunday, about 3 hours
 
-- [Python profiling](https://docs.python.org/3/library/profile.html) — suggested 40 min
+- [AWS Builders' Library: timeouts, retries and backoff](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — suggested 60 min
+- [Google SRE: handling overload](https://sre.google/sre-book/handling-overload/) — suggested 50 min
 - [Grafana k6 running tests](https://grafana.com/docs/k6/latest/get-started/running-k6/) — suggested 40 min
+- [Python profiling](https://docs.python.org/3/library/profile.html) — suggested 30 min
 
-Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: profiling, load testing, queues, saturation, capacity estimates.
+Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: profiling, load testing, percentiles, saturation, queues, timeouts, retry budgets, jitter, backpressure, circuit breakers, recovery.
 
 ## Sunday — foundations and first contact (8 hours)
 
 - Weekly planning, prior-week follow-up, and acceptance criteria — 1 hour.
-- Required sources and concept notes — 2 hours.
+- Required sources and concept notes — 3 hours.
 - Independently start, smoke-test, and map the environment — 2 hours.
-- Guided exercise 1 — 1.5 hours.
-- Evidence, questions, and end-of-day summary — 1.5 hours.
+- Establish the workload and first baseline — 1 hour.
+- Evidence, questions, and end-of-day summary — 1 hour.
 
 From the repository root, independently run:
 
@@ -56,9 +62,9 @@ Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, active con
 
 ## Monday — guided practice and visible case (8 hours)
 
-1. **Establish a repeatable latency baseline** — suggested 1.5 hours.
-2. **Create CPU, latency, and saturation cases** — suggested 1.5 hours.
-3. **Profile one bottleneck and show before/after percentiles** — suggested 1.5 hours.
+1. **Establish repeatable load and latency-percentile baselines** — suggested 1.5 hours.
+2. **Measure retry amplification, saturation, queues, and recovery** — suggested 1.5 hours.
+3. **Add timeout budgets, jitter, concurrency limits, backpressure, and circuit breaking one at a time** — suggested 1.5 hours.
 
 Use roughly 1.5 hours for each remaining guided exercise, 2 hours for the prepared case, 1.5 hours for investigation/evidence, and 1.5 hours for review and refinement. Run:
 
@@ -70,7 +76,7 @@ State the expected behavior before running it. Collect signals, explain recovery
 
 ## Tuesday — design and main implementation (8 hours)
 
-**Measure and improve a slow workload.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
+**Keep a slow and partially failing workload stable under bounded load.** Use the simulator at `http://localhost:8080`. Suggested allocation: design and interfaces 1.5 hours; first vertical slice 4.5 hours; initial automated tests and review 2 hours. Preserve request IDs and other evidence. Use portable path APIs such as `pathlib.Path`; copying supplied PowerShell commands is sufficient.
 
 ## Wednesday — implementation, cases, and failure testing (8 hours)
 

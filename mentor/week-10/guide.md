@@ -1,49 +1,23 @@
-# Mentor guide — Week 10: Security Fundamentals
+# Mentor guide — Week 10: Security, Authentication, and Authorization
 
-> Restricted: contains review guidance and hidden assessment details.
+> Restricted review guidance.
 
-## Review intent
-
-The student should demonstrate: identify trust boundaries and verify controls. Focus the review on assets, actors, trust boundaries, least privilege, secret handling. Do not reward extra architecture that lacks evidence, and do not operate or repair the normal environment for the student.
-
-## Suggested review sequence
-
-1. Ask the student to state the acceptance criteria and current risk.
-2. Ask the student to independently start and smoke-test the environment while narrating their model.
-3. Review the student's visible practice case and custom case before offering help.
-4. Ask for a five-minute implementation demo.
-5. Optionally choose one hidden failure from the mentor controls and observe diagnosis.
-6. Review tests and one design decision, then score with `curriculum\assessment_rubric.md`.
-
-## Progressive hints
-
-- **Hint 1:** Ask which boundary owns the observed behavior.
-- **Hint 2:** Ask for a request ID and compare client/server timing.
-- **Hint 3:** Ask what the student learned from `/api/state`, container status, and logs.
-- **Hint 4:** Ask the student to reset the visible case, reproduce one variable at a time, and compare evidence.
+Assess mechanism understanding, validation completeness, key custody, authorization separation, and safe failure. Do not reward custom cryptography or identity-provider administration.
 
 ## Hidden checks
 
-- The student can start, inspect, exercise, and reset the environment without mentor action.
-- A timeout or 503 does not trigger an unbounded retry loop.
-- Duplicate requests/events do not corrupt state.
-- Logs omit authorization values and secrets.
-- The custom case is deterministic and teaches a subject-specific behavior.
+Modified payload, `alg` confusion/disallowed algorithm, wrong issuer, wrong audience, expired/not-yet-valid token, unknown `kid`, stale JWKS during rotation, missing scope, another owner's resource, token replay, and accidental credential logging.
 
-## Red flags
+## Questions
 
-Waiting for the mentor to operate scripts, global exception swallowing, sleeps used as synchronization, destructive recovery as the first option, tests coupled to execution order, or confident claims without measurements. Do not score PowerShell syntax or Windows administration.
-
-## Optional hidden fault exercise
-
-Only after the student independently passes the baseline, visible case, and custom-case work, optionally run:
-
-```powershell
-+.\training-platform\mentor\set-fault.ps1 -Preset week-10
-+```
-
-Expected injected behavior is recorded in `training-platform\mentor\incident-presets\week-10.json`. Ask the student to diagnose before revealing it. Finish with `.\training-platform\mentor\reset-faults.ps1`.
+- What does the signature prove, and what does it not prove?
+- Why is a signed JWT readable and not necessarily encrypted?
+- Who holds the private key and who receives the public key?
+- Why can a cryptographically valid token still be unauthorized?
+- What is the difference between access, refresh, and ID tokens?
+- What happens during key rotation and JWKS failure?
+- Where can a bearer token leak or be replayed?
 
 ## Pass evidence
 
-A pass requires independent environment operation, appropriate tests, a meaningful student-created case, bounded failure behavior, and a clear explanation of tradeoffs. Capture one observation and one next step in the review record.
+Require allow-listed algorithms, complete claim validation, separate resource authorization, safe key/token handling, rotation reasoning, bounded caching, clear 401/403 behavior, and tests. Reject solutions that decode without verifying, trust token claims blindly, log tokens, embed private keys, or confuse signing with encryption.

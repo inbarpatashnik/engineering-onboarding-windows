@@ -6,12 +6,15 @@ Do not read passively. For each source, capture five notes: the problem, the mec
 
 ## Core reading
 
-- [OWASP threat modeling](https://owasp.org/www-project-threat-modeling/) — suggested 50 min
-- [OWASP secrets management](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) — suggested 40 min
+- [OWASP authentication cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) — suggested 40 min
+- [OWASP authorization cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) — suggested 40 min
+- [RFC 6750: bearer token usage](https://www.rfc-editor.org/rfc/rfc6750.html) — suggested 35 min
+- [RFC 8725: JWT best current practices](https://www.rfc-editor.org/rfc/rfc8725.html) — suggested 50 min
+- [RFC 9700: OAuth 2.0 security best current practice](https://www.rfc-editor.org/rfc/rfc9700.html) — suggested 50 min
 
 ## Guided web workshops
 
-- [OWASP Juice Shop tutorial mode](https://owasp.org/www-project-juice-shop/) — 2 hours. **Evidence:** Complete only the guided beginner tutorials in an authorized local/demo environment and map each issue to a defensive control.
+- [Repository asymmetric-token lab](../../training-platform/week-10/README.md) — 3 hours. **Evidence:** Generate a local key pair, issue signed synthetic tokens, verify claims, exercise key rotation, and reject deliberately invalid credentials.
 
 External workshops may require a free account or create a separate practice repository. Never enter company secrets, production data, or internal source code. Use synthetic training data only.
 

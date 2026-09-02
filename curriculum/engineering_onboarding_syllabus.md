@@ -60,26 +60,26 @@ Each week combines concepts, a constrained build, evidence collection, review, a
 - **Applied work:** Instrument a request path.
 - **Exit capability:** Diagnose latency using correlated telemetry.
 
-## Week 9: Reliability Patterns
+## Week 9: System Design and Safe Change
 
 - **Depth:** Deep
-- **Subjects:** timeouts, retries, backoff, circuit breakers, bulkheads.
-- **Applied work:** Harden a flaky dependency integration.
-- **Exit capability:** Avoid retry storms and bound failure impact.
+- **Subjects:** system mapping, boundaries, compatibility, ADRs, staged change, mixed versions, rollback.
+- **Applied work:** Design and stage a backward-compatible system change.
+- **Exit capability:** Change an unfamiliar system without breaking its contracts.
 
-## Week 10: Security Fundamentals
-
-- **Depth:** Working familiarity
-- **Subjects:** threat modeling, secrets, authn/authz, input safety.
-- **Applied work:** Threat-model and secure a service endpoint.
-- **Exit capability:** Identify trust boundaries and verify controls.
-
-## Week 11: Performance and Capacity
+## Week 10: Security, Authentication, and Authorization
 
 - **Depth:** Working familiarity
-- **Subjects:** profiling, load testing, queues, saturation, capacity estimates.
-- **Applied work:** Measure and improve a slow workload.
-- **Exit capability:** Show before/after evidence without hiding tradeoffs.
+- **Subjects:** threat modeling, authentication, authorization, asymmetric keys, tokens, OAuth roles, secrets, input safety.
+- **Applied work:** Secure a resource API and verify signed access tokens.
+- **Exit capability:** Identify trust boundaries and correctly validate identity and permissions.
+
+## Week 11: Performance, Capacity, and Resilience
+
+- **Depth:** Working familiarity
+- **Subjects:** profiling, load testing, percentiles, saturation, queues, timeouts, retry budgets, jitter, backpressure, circuit breakers, recovery.
+- **Applied work:** Keep a slow and partially failing workload stable under bounded load.
+- **Exit capability:** Measure capacity and prevent failure amplification.
 
 ## Week 12: Delivery and Operations
 

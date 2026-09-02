@@ -1,6 +1,6 @@
 # Exercise 1: active source notes
 
-**Time:** 2 hours  
+**Time:** 2 hours
 **Objective:** Build a working mental model of document stores, graph traversal, denormalization tradeoffs before implementation.
 
 ## Steps

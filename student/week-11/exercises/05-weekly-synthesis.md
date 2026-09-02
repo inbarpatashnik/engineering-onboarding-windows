@@ -5,7 +5,7 @@
 
 ## Scenario
 
-Present a defensible performance result including workload, percentiles, bottleneck evidence, improvement, and tradeoff.
+Keep a slow and partially failing workload stable under bounded load. Present percentiles, throughput, errors, saturation, retry amplification, recovery behavior, and explicit tradeoffs.
 
 ## Produce
 
