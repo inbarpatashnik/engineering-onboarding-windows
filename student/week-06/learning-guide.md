@@ -1,39 +1,21 @@
-# Week 6 learning guide: Events and Messaging
+# Week 6 learning guide: Kafka Client Engineering
 
-Use this page as the daily navigator. The goal is recover from duplicates and poison messages. Work independently, record evidence, and use the mentor for review and challenge—not routine environment operation.
+## Sunday — build the model
 
-## Sunday — foundations
+Read the core sources, draw producer → topic-partition → consumer group → side effect → offset commit, and predict three failure windows. Start Kafka only through the supplied script and honor the 30-minute setup timebox.
 
-1. Read [the source guide](source-guide.md) and complete [source notes](exercises/01-source-notes.md).
-2. Start and map the environment using [the environment lab](exercises/03-environment-lab.md), stopping before the failure case.
-3. Complete item 1 in [small practice](exercises/02-small-practice.md).
-4. Record blockers, vocabulary, and questions.
+## Monday — observe the protocol from the client side
 
-## Monday — guided practice
+Produce keyed and unkeyed records, compare ordering, use two consumers in one group and consumers in different groups, restart a consumer, and replay. Record offsets and assignments rather than studying broker internals.
 
-1. Complete items 2 and 3 in [small practice](exercises/02-small-practice.md).
-2. Finish the visible case in [the environment lab](exercises/03-environment-lab.md).
-3. Re-run the smoke test and turn observations into assertions.
+## Tuesday — build the client
 
-## Tuesday — build
+Create a small producer and consumer behind narrow interfaces. Validate before publish, wait for delivery acknowledgement, use explicit keys, deserialize defensively, and keep side effects idempotent.
 
-1. Read the acceptance criteria in [project and custom case](exercises/04-project-and-custom-case.md).
-2. Design interfaces and implement the first vertical slice.
-3. Add initial tests and make one reviewable commit.
+## Wednesday — failure cases
 
-## Wednesday — failures and depth
+Test duplicates, malformed/unknown versions, transient processing failure, interruption before and after commit, rebalance/shutdown, and replay. Use fakes for fast deterministic unit tests and Kafka only for a small integration layer.
 
-1. Complete the project and create the custom case.
-2. Add failure, recovery, and restart tests.
-3. Refactor only after evidence and tests protect behavior.
+## Thursday — defend the guarantees
 
-## Thursday — synthesize and review
-
-1. Reproduce the work from a fresh session.
-2. Complete [the weekly synthesis](exercises/05-weekly-synthesis.md).
-3. Finish the [deliverables checklist](deliverables-checklist.md).
-4. Lead the demo; the mentor challenges reasoning and may add a hidden case.
-
-## Help rule
-
-Before asking for operational help, provide the failing command, expected and actual result, request ID/time, relevant status/log evidence, one hypothesis, and one controlled experiment already attempted.
+Reproduce from a fresh session, demonstrate one failure window, explain delivery semantics without saying “exactly once” loosely, and show which telemetry would detect lag, retries, rejects, and processing failure.

@@ -1,41 +1,33 @@
-# Exercise 4: main project and custom case
+# Exercise 4: ownership and dependency models across document and graph databases
 
-**Time:** 16 hours across Tuesday and Wednesday  
-**Project:** Model ownership and dependency relationships  
-**Exit capability:** Choose a model based on access patterns.
+**Time:** 16 hours across Tuesday and Wednesday
 
-## Acceptance criteria
+## Goal
 
-1. Define inputs, outputs, invariants, and explicit non-goals.
-2. Implement a reviewable vertical slice before adding breadth.
-3. Preserve correlation evidence and fail clearly on invalid inputs.
-4. Test the happy path, three failures, restart/recovery where relevant, and the custom case.
-5. Document one rejected alternative and its tradeoff.
+Model the same service-ownership and dependency domain as documents and as a labeled property graph. Neo4j is the learning implementation; ArangoDB is the transfer target. You are not expected to learn Neo4j administration.
 
-## Custom-case design
+## Required access patterns
 
-Choose `delay`, `unavailable`, or `malformed` only as a starting mechanism. Make the case subject-specific through the hypothesis, workload, expected signal, client behavior, and assertion.
+1. Find the direct owner of a service.
+2. Find every team affected by a dependency outage up to a bounded depth.
+3. Detect a cycle and return the path that proves it.
+4. Find services with no active owner.
+5. Change an owner without leaving stale reverse relationships.
 
-```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-04-case -Mode delay -DelayMs 700 -LearningGoal "Replace with the specific concept being tested"
-.\training-platform\student\run-case.ps1 -Case my-week-04-case
-```
+## Work
 
-Edit the generated JSON to make the learning goal and expected signal precise. Never edit mentor presets.
+1. Write the five queries/questions before choosing a schema.
+2. Build a document model and a property-graph model with the same synthetic data.
+3. Complete the selected Neo4j GraphAcademy modules and implement at least three queries in Cypher.
+4. Translate two traversals into AQL using ArangoDB's vertex/document and edge-collection model.
+5. Create a cycle, a missing owner, and a high-fan-out dependency. Bound every traversal.
+6. Compare correctness, query clarity, update complexity, indexing, and operational cost.
+7. Recommend relational, document, graph, or ArangoDB multi-model storage for this domain. A mixed answer is allowed when boundaries are explicit.
 
-## Review checkpoints
+## Transfer table
 
-- Tuesday midday: acceptance criteria and interface sketch
-- Tuesday end: vertical slice and initial tests
-- Wednesday midday: custom case and failure matrix
-- Wednesday end: complete tests, runbook, evidence, and clean smoke test
-
-## Hints
-
-- Reduce scope before adding abstractions.
-- Turn every surprising observation into a minimal reproduction.
-- A case is valuable when it can disprove an assumption, not merely make the system fail.
+Include a table covering: Neo4j term, ArangoDB term, transferable idea, syntax/product difference, and operational question still unanswered. At minimum cover node/vertex document, relationship/edge document, properties, direction, path, traversal depth, cycle handling, and indexes.
 
 ## Done when
 
-Another student can clone, run, test, exercise, recover, and explain the project from your artifacts without mentor operation.
+Another engineer can run the examples, see the same results in both models, understand why the chosen model fits the access patterns, and distinguish general graph reasoning from Neo4j- or ArangoDB-specific behavior.

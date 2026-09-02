@@ -1,45 +1,17 @@
-# Exercise 3: environment lab and visible case
+# Exercise 3: disposable local Kafka lab
 
-**Time:** 4 hours across Sunday and Monday  
-**Objective:** Learn Kafka concepts, delivery semantics, schemas, consumers by operating and observing the supplied environment.
+Follow `training-platform\week-06\README.md`. Docker Desktop and the official Apache Kafka image provide the broker; the provided PowerShell scripts start, verify, and stop it.
 
-## Baseline
+## Troubleshooting budget
 
-```powershell
-.\training-platform\scripts\start-week.ps1 -Week 6
-.\training-platform\scripts\smoke-test.ps1 -Week 6
-```
+Spend no more than 30 minutes on initial startup and no more than two controlled attempts. Capture the output from `diagnose.ps1`; then continue with `fallback-client-lab.py` if Kafka is unavailable. Broker configuration changes are not part of this exercise.
 
-Map active services, ports, health checks, volumes, `/api/state`, and relevant logs. Draw a small request/data flow and identify where state persists.
+## Required observations
 
-## Prepared case
+- Topic partition count and record metadata
+- Same-key ordering and absence of global ordering
+- Consumer assignment for same and different group IDs
+- Committed position before and after restart
+- Replay from an earlier position
 
-Read `training-platform/student/cases/week-06-practice.json`. Without running it, predict status, latency/parsing behavior, state, logs, and recovery. Then run:
-
-```powershell
-.\training-platform\student\run-case.ps1 -Case week-06-practice
-```
-
-Perform at least five repeated observations. Explain stable versus variable behavior. Reset the case and prove recovery:
-
-```powershell
-.\training-platform\student\reset-case.ps1
-.\training-platform\scripts\smoke-test.ps1 -Week 6
-```
-
-## Expected observations
-
-- Baseline health remains distinguishable from dependency behavior.
-- Requests carry identifiers that connect client evidence and logs.
-- The case creates the behavior described in its JSON without corrupting source files.
-- Reset restores normal dependency behavior without deleting student work.
-
-## Self-check and hints
-
-- If evidence is inconsistent, check whether the case uses a failure rate and collect more samples.
-- If the API is unreachable, inspect container status before changing code.
-- If reset appears ineffective, query `/api/state` and repeat with a new request ID.
-
-## Done when
-
-`EVIDENCE.md` contains the system map, predictions, repeated observations, explanation, recovery proof, and one automated assertion.
+The fallback proves client logic only. Mark integration evidence pending and return to it when a broker is available.

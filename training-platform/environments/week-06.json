@@ -1,8 +1,7 @@
 {
   "week": 6,
   "profiles": [
-    "events",
-    "cache"
+    "events"
   ],
   "api_port": 8080
 }

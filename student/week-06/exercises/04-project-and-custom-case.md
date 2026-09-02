@@ -1,41 +1,24 @@
-# Exercise 4: main project and custom case
+# Exercise 4: resilient Kafka client
 
-**Time:** 16 hours across Tuesday and Wednesday  
-**Project:** Build an idempotent event consumer  
-**Exit capability:** Recover from duplicates and poison messages.
+**Time:** 16 hours
+
+Build a small event producer and consumer for synthetic resource-ownership changes.
 
 ## Acceptance criteria
 
-1. Define inputs, outputs, invariants, and explicit non-goals.
-2. Implement a reviewable vertical slice before adding breadth.
-3. Preserve correlation evidence and fail clearly on invalid inputs.
-4. Test the happy path, three failures, restart/recovery where relevant, and the custom case.
-5. Document one rejected alternative and its tradeoff.
+1. Events have stable IDs, entity keys, timestamps, and explicit schema versions.
+2. The producer validates before publish and observes delivery success/failure.
+3. The consumer uses a stable group, bounded polling, graceful shutdown, and explicit commit behavior.
+4. The side effect is idempotent by event ID.
+5. Malformed and unsupported events are quarantined with a reason and safe metadata.
+6. Transient processing failures retry with a strict bound; permanent failures do not block forever.
+7. Tests cover failure before the side effect, after the side effect but before commit, and after commit.
+8. Logs/metrics expose group, topic, partition, offset, lag, retry, reject, and processing outcome without leaking payloads.
 
-## Custom-case design
+## Required design statement
 
-Choose `delay`, `unavailable`, or `malformed` only as a starting mechanism. Make the case subject-specific through the hypothesis, workload, expected signal, client behavior, and assertion.
+State the delivery behavior your client actually provides. Explain why broker claims alone cannot make an external side effect exactly once, and identify the transaction/idempotency boundary.
 
-```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-06-case -Mode delay -DelayMs 700 -LearningGoal "Replace with the specific concept being tested"
-.\training-platform\student\run-case.ps1 -Case my-week-06-case
-```
+## Non-goals
 
-Edit the generated JSON to make the learning goal and expected signal precise. Never edit mentor presets.
-
-## Review checkpoints
-
-- Tuesday midday: acceptance criteria and interface sketch
-- Tuesday end: vertical slice and initial tests
-- Wednesday midday: custom case and failure matrix
-- Wednesday end: complete tests, runbook, evidence, and clean smoke test
-
-## Hints
-
-- Reduce scope before adding abstractions.
-- Turn every surprising observation into a minimal reproduction.
-- A case is valuable when it can disprove an assumption, not merely make the system fail.
-
-## Done when
-
-Another student can clone, run, test, exercise, recover, and explain the project from your artifacts without mentor operation.
+Multi-broker deployment, replication tuning, provider selection, Kafka security administration, and production capacity planning.

@@ -1,53 +1,17 @@
-# Exercise 2: small practice set
+# Exercise 2: Kafka client practice
 
-These exercises isolate one idea at a time before the main project. Keep each experiment small, reversible, and evidenced.
+## 1. Keys, partitions, and ordering — 2 hours
 
-## Exercise 1: Publish and consume a small event batch
+Publish an interleaved sequence for three entity IDs to a three-partition topic. Predict and then record partitions and offsets. Explain why order exists within a partition but not globally, and choose an application key.
 
-**Suggested time:** 1.5 hours
+## 2. Groups, commits, restart, and replay — 3 hours
 
-### Task
+Run two consumers with the same group ID, then two different group IDs. Record assignments. Process a bounded batch, commit, restart, and show the resume point. Use a new group or explicit seek to replay. Explain when replay is safe.
 
-Publish and consume a small event batch. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
+## 3. Duplicate and poison events — 3 hours
 
-### Self-check
+Feed the same event ID twice and prove the side effect occurs once. Feed malformed JSON, a missing required field, and an unknown schema version. Reject or quarantine them without blocking the partition forever or committing unrelated work incorrectly.
 
-- Can another student reproduce it from your notes?
-- Did you change only one variable?
-- Did you capture an observable signal rather than an opinion?
-- Does the environment pass its smoke test afterward?
+## Evidence format
 
-## Exercise 2: Create duplicate and poison-message cases
-
-**Suggested time:** 1.5 hours
-
-### Task
-
-Create duplicate and poison-message cases. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
-
-### Self-check
-
-- Can another student reproduce it from your notes?
-- Did you change only one variable?
-- Did you capture an observable signal rather than an opinion?
-- Does the environment pass its smoke test afterward?
-
-## Exercise 3: Restart the consumer and explain offset recovery
-
-**Suggested time:** 1.5 hours
-
-### Task
-
-Restart the consumer and explain offset recovery. Define expected behavior first, perform one controlled change, capture the result, restore the baseline, and convert the observation into a test or reusable check.
-
-### Self-check
-
-- Can another student reproduce it from your notes?
-- Did you change only one variable?
-- Did you capture an observable signal rather than an opinion?
-- Does the environment pass its smoke test afterward?
-
-
-## Submission
-
-For every exercise include the expectation, commands/code, observed signal, conclusion, cleanup, and automated assertion or reason automation is inappropriate.
+For each experiment record prediction, client configuration, input IDs/keys, partition and offset, processing result, commit position, restart/replay result, and conclusion. Never include credentials or sensitive payloads.

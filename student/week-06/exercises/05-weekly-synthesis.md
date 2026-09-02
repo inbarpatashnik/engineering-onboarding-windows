@@ -1,27 +1,14 @@
 # Exercise 5: weekly synthesis
 
-**Time:** 2 hours on Thursday  
-**Purpose:** Demonstrate an integrated mental model rather than a collection of completed tasks.
+Trace one event through producer validation, serialization, key selection, delivery acknowledgement, partition/offset assignment, poll, validation, side effect, and commit.
 
-## Scenario
+Repeat the trace for:
 
-Trace one event from producer to side effect under success, duplicate delivery, poison data, and consumer restart.
+1. producer timeout with unknown delivery outcome;
+2. crash before the side effect;
+3. crash after the side effect but before commit;
+4. poison message;
+5. rebalance during processing;
+6. intentional replay.
 
-## Produce
-
-1. A one-page explanation for another engineer.
-2. A five-minute live demonstration using the environment.
-3. A failure matrix: trigger, expected signal, unsafe response, safe response, test.
-4. A decision record naming the chosen approach and one rejected alternative.
-5. Three mentor questions you expect and evidence-backed answers.
-
-## Self-review
-
-- Can you explain the mechanism without reading code line by line?
-- Do claims point to tests, timings, plans, traces, logs, or requests?
-- Can you distinguish detection, mitigation, recovery, and prevention?
-- Did environment operation teach a subject concept rather than Windows syntax?
-
-## Stretch
-
-Change one assumption in the scenario and explain which design, test, and operational response must change.
+For each, state likely duplicate/loss behavior, safe client response, evidence, and test. Finish with two columns: **client owns** and **broker/platform owns**.

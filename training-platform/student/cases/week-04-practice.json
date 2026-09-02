@@ -4,6 +4,6 @@
   "mode": "malformed",
   "delay_ms": 0,
   "failure_rate": 0,
-  "learning_goal": "Write three access patterns before choosing a model",
+  "learning_goal": "Translate two Neo4j Cypher traversals into equivalent ArangoDB AQL and identify what transfers",
   "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
 }

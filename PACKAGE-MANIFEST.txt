@@ -216,3 +216,9 @@ training-platform/student/run-case.ps1
 training-platform/student/setup-week01-git-lab.ps1
 training-platform/tests/test_generator.py
 training-platform/tests/test_week01_git_lab.py
+training-platform/week-06/README.md
+training-platform/week-06/check-kafka.ps1
+training-platform/week-06/consume-samples.ps1
+training-platform/week-06/diagnose.ps1
+training-platform/week-06/fallback-client-lab.py
+training-platform/week-06/produce-samples.ps1

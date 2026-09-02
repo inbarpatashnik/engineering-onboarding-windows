@@ -6,12 +6,14 @@ Do not read passively. For each source, capture five notes: the problem, the mec
 
 ## Core reading
 
+- [Apache Kafka introduction](https://kafka.apache.org/intro) — suggested 40 min
 - [Apache Kafka design](https://kafka.apache.org/documentation/#design) — suggested 60 min
-- [Redpanda development quickstart](https://docs.redpanda.com/current/get-started/quick-start/) — suggested 30 min
+- [Kafka consumer configuration](https://kafka.apache.org/documentation/#consumerconfigs) — suggested 45 min
+- [Confluent: delivery guarantees for Kafka consumers](https://developer.confluent.io/courses/architecture/consumer-hands-on/) — suggested 35 min
 
 ## Guided web workshops
 
-- [Redpanda development quickstart](https://docs.redpanda.com/current/get-started/quick-start/) — 2 hours. **Evidence:** Create a topic, publish records, consume them, and record offsets and restart behavior.
+- [Repository Kafka client lab](../../training-platform/week-06/README.md) — 3 hours. **Evidence:** Start the supplied Apache Kafka container, run the readiness check, then produce, consume, restart, replay, and record client-visible evidence. Stop setup work after the documented timebox.
 
 External workshops may require a free account or create a separate practice repository. Never enter company secrets, production data, or internal source code. Use synthetic training data only.
 

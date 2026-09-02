@@ -34,6 +34,8 @@ The allocations below are guidance, not speed targets. Record blockers early. If
 
 - [MongoDB data modeling](https://www.mongodb.com/docs/manual/data-modeling/) — suggested 45 min
 - [Neo4j graph data modeling](https://neo4j.com/docs/getting-started/data-modeling/) — suggested 45 min
+- [ArangoDB data models](https://docs.arango.ai/arangodb/stable/concepts/data-models/) — suggested 30 min
+- [ArangoDB graph traversals explained](https://docs.arango.ai/arangodb/stable/aql/graph-queries/traversals-explained/) — suggested 30 min
 
 Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: document stores, graph traversal, denormalization tradeoffs.
 
@@ -56,8 +58,8 @@ Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, active con
 
 ## Monday — guided practice and visible case (8 hours)
 
-1. **Model the same ownership data as documents and as a graph** — suggested 1.5 hours.
-2. **Write three access patterns before choosing a model** — suggested 1.5 hours.
+1. **Model the same ownership data as documents and as a property graph** — suggested 1.5 hours.
+2. **Translate two Neo4j Cypher traversals into equivalent ArangoDB AQL and identify what transfers** — suggested 1.5 hours.
 3. **Create a cyclic dependency case and bound traversal** — suggested 1.5 hours.
 
 Use roughly 1.5 hours for each remaining guided exercise, 2 hours for the prepared case, 1.5 hours for investigation/evidence, and 1.5 hours for review and refinement. Run:

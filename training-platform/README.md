@@ -1,6 +1,6 @@
 # Training platform
 
-The platform exposes a deterministic simulator on port 8080. Week profiles optionally add PostgreSQL, Redis, or Redpanda while preserving one consistent student API. Docker Compose profiles are selected by the PowerShell scripts; students do not need to memorize Compose flags.
+The platform exposes a deterministic simulator on port 8080. Week profiles optionally add PostgreSQL, Redis, or the official Apache Kafka image while preserving one consistent student workflow. Docker Compose profiles are selected by the PowerShell scripts; students do not need to memorize Compose flags.
 
 ## Commands
 
@@ -21,6 +21,8 @@ Students own routine operation. `student/run-case.ps1` applies a visible determi
 - Weeks 1–2: simulator only
 - Weeks 3 and 7: PostgreSQL
 - Weeks 4, 5, 8, 9, 10, 11: PostgreSQL and Redis as relevant
-- Weeks 6, 12, 13: PostgreSQL, Redis, and Redpanda
+- Weeks 6, 12, 13: PostgreSQL, Redis, and Apache Kafka
+
+Week 6 treats Kafka as a disposable dependency. Students learn producer and consumer behavior, not broker installation or cluster administration. See `week-06/README.md` for the setup timebox and fallback route.
 
 Named volumes retain data between stop/start. `reset-week.ps1` deletes only Compose resources for this project and then reseeds synthetic data.

@@ -5,7 +5,7 @@
 
 ## Scenario
 
-Choose relational, document, or graph storage for five access patterns and explain the rejected models.
+Choose relational, document, graph, or ArangoDB multi-model storage for five access patterns. Explain what the Neo4j workshop taught that transfers to ArangoDB and what remains vendor-specific.
 
 ## Produce
 

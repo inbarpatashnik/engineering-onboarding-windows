@@ -8,11 +8,13 @@ Do not read passively. For each source, capture five notes: the problem, the mec
 
 - [MongoDB data modeling](https://www.mongodb.com/docs/manual/data-modeling/) — suggested 45 min
 - [Neo4j graph data modeling](https://neo4j.com/docs/getting-started/data-modeling/) — suggested 45 min
+- [ArangoDB data models](https://docs.arango.ai/arangodb/stable/concepts/data-models/) — suggested 30 min
+- [ArangoDB graph traversals explained](https://docs.arango.ai/arangodb/stable/aql/graph-queries/traversals-explained/) — suggested 30 min
 
 ## Guided web workshops
 
 - [MongoDB University: Data Modeling](https://learn.mongodb.com/courses/introduction-to-mongodb-data-modeling) — 2 hours. **Evidence:** Complete the relationship, embedding, and referencing lessons.
-- [Neo4j GraphAcademy workshop](https://graphacademy.neo4j.com/courses/workshop-fundamentals) — 2 hours. **Evidence:** Complete the graph and Cypher modules and compare the model with the document model.
+- [Neo4j GraphAcademy workshop](https://graphacademy.neo4j.com/courses/workshop-fundamentals) — 2 hours. **Evidence:** Complete the graph-modeling and introductory Cypher modules. Focus on transferable property-graph concepts, then map them to ArangoDB rather than learning Neo4j administration.
 
 External workshops may require a free account or create a separate practice repository. Never enter company secrets, production data, or internal source code. Use synthetic training data only.
 
