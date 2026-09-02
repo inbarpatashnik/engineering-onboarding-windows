@@ -106,6 +106,7 @@ student/week-08/exercises/03-environment-lab.md
 student/week-08/exercises/04-project-and-custom-case.md
 student/week-08/exercises/05-weekly-synthesis.md
 student/week-08/learning-guide.md
+student/week-08/quest-world-lab.md
 student/week-08/source-guide.md
 student/week-09/assignment.md
 student/week-09/deliverables-checklist.md

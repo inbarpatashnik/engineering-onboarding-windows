@@ -1,45 +1,17 @@
-# Exercise 3: environment lab and visible case
+# Exercise 3: Quest World investigation
 
-**Time:** 4 hours across Sunday and Monday  
-**Objective:** Learn structured logs, metrics, traces, correlation, SLO signals by operating and observing the supplied environment.
+**Time:** 5 hours across Sunday and Monday
 
-## Baseline
+Follow [the Quest World lab](../quest-world-lab.md). Complete the game, but submit the investigation—not merely proof that you won.
 
-```powershell
-.\training-platform\scripts\start-week.ps1 -Week 8
-.\training-platform\scripts\smoke-test.ps1 -Week 8
-```
+## Investigation challenges
 
-Map active services, ports, health checks, volumes, `/api/state`, and relevant logs. Draw a small request/data flow and identify where state persists.
+1. Use a metric to recognize a meaningful state change or unsafe trend.
+2. Use logs to understand a decision or failure hidden from the user interface.
+3. Follow one game action through its complete trace and service boundaries.
+4. Pivot between at least two signal types without manually retyping an unstable identifier.
+5. Compare what each signal reveals and what it cannot reveal.
 
-## Prepared case
+## Fallback
 
-Read `training-platform/student/cases/week-08-practice.json`. Without running it, predict status, latency/parsing behavior, state, logs, and recovery. Then run:
-
-```powershell
-.\training-platform\student\run-case.ps1 -Case week-08-practice
-```
-
-Perform at least five repeated observations. Explain stable versus variable behavior. Reset the case and prove recovery:
-
-```powershell
-.\training-platform\student\reset-case.ps1
-.\training-platform\scripts\smoke-test.ps1 -Week 8
-```
-
-## Expected observations
-
-- Baseline health remains distinguishable from dependency behavior.
-- Requests carry identifiers that connect client evidence and logs.
-- The case creates the behavior described in its JSON without corrupting source files.
-- Reset restores normal dependency behavior without deleting student work.
-
-## Self-check and hints
-
-- If evidence is inconsistent, check whether the case uses a failure rate and collect more samples.
-- If the API is unreachable, inspect container status before changing code.
-- If reset appears ineffective, query `/api/state` and repeat with a new request ID.
-
-## Done when
-
-`EVIDENCE.md` contains the system map, predictions, repeated observations, explanation, recovery proof, and one automated assertion.
+If the local stack exceeds the 45-minute setup budget, use Killercoda. If neither path is available, use the repository simulator to create latency and malformed-response cases and complete the same evidence method; mark cross-service correlation as pending.

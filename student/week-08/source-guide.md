@@ -6,12 +6,14 @@ Do not read passively. For each source, capture five notes: the problem, the mec
 
 ## Core reading
 
-- [OpenTelemetry developer getting started](https://opentelemetry.io/docs/getting-started/dev/) — suggested 45 min
 - [OpenTelemetry signals](https://opentelemetry.io/docs/concepts/signals/) — suggested 35 min
+- [OpenTelemetry context propagation](https://opentelemetry.io/docs/concepts/context-propagation/) — suggested 35 min
+- [OpenTelemetry semantic conventions](https://opentelemetry.io/docs/specs/semconv/) — suggested 45 min
+- [Grafana: logs, metrics, traces, and correlation](https://grafana.com/blog/metrics-logs-traces-and-mayhem-introducing-an-observability-adventure-game-powered-by-grafana-alloy-and-otel/) — suggested 40 min
 
 ## Guided web workshops
 
-- [OpenTelemetry Demo](https://opentelemetry.io/docs/demo/) — 2 hours. **Evidence:** Explore the demo architecture and trace one request across at least two services.
+- [Grafana Quest World observability adventure](https://github.com/grafana/adventure) — 3–4 hours. **Evidence:** Play the observability adventure locally or in its Killercoda sandbox. Use metrics, logs, and traces to solve the game, then preserve an evidence trail showing how the signals changed your hypotheses.
 
 External workshops may require a free account or create a separate practice repository. Never enter company secrets, production data, or internal source code. Use synthetic training data only.
 

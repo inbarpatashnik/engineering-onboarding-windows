@@ -15,6 +15,10 @@ Diagnose latency using correlated telemetry.
 7. [Exercise 5: weekly synthesis](exercises/05-weekly-synthesis.md)
 8. [Deliverables checklist](deliverables-checklist.md)
 
+## Featured investigation workshop
+
+Complete [Quest World observability investigation](quest-world-lab.md) locally or through its Killercoda fallback. Honor the setup timebox; the investigation evidence is assessed, not Docker repair.
+
 ## Weekly rhythm: Sunday–Thursday, approximately 40 hours
 
 This plan assumes five ordinary eight-hour workdays. Adjust for holidays, organizational events, or approved leave; the mentor should reduce scope rather than expect hidden overtime. Breaks and normal team ceremonies are included within each day.
@@ -32,8 +36,10 @@ The allocations below are guidance, not speed targets. Record blockers early. If
 
 ## Required learning sources — Sunday, about 2 hours
 
-- [OpenTelemetry developer getting started](https://opentelemetry.io/docs/getting-started/dev/) — suggested 45 min
 - [OpenTelemetry signals](https://opentelemetry.io/docs/concepts/signals/) — suggested 35 min
+- [OpenTelemetry context propagation](https://opentelemetry.io/docs/concepts/context-propagation/) — suggested 35 min
+- [OpenTelemetry semantic conventions](https://opentelemetry.io/docs/specs/semconv/) — suggested 45 min
+- [Grafana: logs, metrics, traces, and correlation](https://grafana.com/blog/metrics-logs-traces-and-mayhem-introducing-an-observability-adventure-game-powered-by-grafana-alloy-and-otel/) — suggested 40 min
 
 Follow relevant linked subsections and take working notes. Answer: what problem does this solve, which assumption can fail, and which observable signal would reveal failure? Topics this week: structured logs, metrics, traces, correlation, SLO signals.
 
@@ -56,9 +62,9 @@ Inspect `/health`, `/api/resources`, `/api/dependency`, `/api/state`, active con
 
 ## Monday — guided practice and visible case (8 hours)
 
-1. **Follow one request through logs, metrics, and traces** — suggested 1.5 hours.
-2. **Create latency and error cases with correlation IDs** — suggested 1.5 hours.
-3. **Identify and remove one high-cardinality attribute** — suggested 1.5 hours.
+1. **Follow one user action through metrics, logs, and traces** — suggested 1.5 hours.
+2. **Diagnose latency and error cases by pivoting between signals** — suggested 1.5 hours.
+3. **Identify and remove one high-cardinality or sensitive attribute** — suggested 1.5 hours.
 
 Use roughly 1.5 hours for each remaining guided exercise, 2 hours for the prepared case, 1.5 hours for investigation/evidence, and 1.5 hours for review and refinement. Run:
 

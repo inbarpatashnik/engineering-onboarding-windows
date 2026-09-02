@@ -5,7 +5,7 @@
 
 ## Scenario
 
-Reconstruct a slow request using logs, metrics, and traces, then propose one low-cardinality alert signal.
+Use Quest World evidence to reconstruct a failed or slow user action across metrics, logs, and traces. Separate symptom, hypothesis, evidence, root cause, mitigation, and a low-cardinality detection signal.
 
 ## Produce
 

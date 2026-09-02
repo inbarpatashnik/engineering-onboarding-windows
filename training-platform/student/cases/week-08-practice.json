@@ -4,6 +4,6 @@
   "mode": "delay",
   "delay_ms": 700,
   "failure_rate": 0,
-  "learning_goal": "Create latency and error cases with correlation IDs",
+  "learning_goal": "Diagnose latency and error cases by pivoting between signals",
   "expected_signal": "Observe status, latency, parsing, request ID, logs, and recovery behavior before resetting."
 }

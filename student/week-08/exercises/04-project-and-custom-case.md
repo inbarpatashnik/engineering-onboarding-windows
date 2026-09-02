@@ -1,41 +1,23 @@
-# Exercise 4: main project and custom case
+# Exercise 4: instrument and investigate one request path
 
-**Time:** 16 hours across Tuesday and Wednesday  
-**Project:** Instrument a request path  
-**Exit capability:** Diagnose latency using correlated telemetry.
+**Time:** 15 hours across Tuesday and Wednesday
+
+Instrument a small request path from an earlier week using OpenTelemetry. Reuse an HTTP client, database/cache interaction, or Kafka consumer rather than creating a new business system.
 
 ## Acceptance criteria
 
-1. Define inputs, outputs, invariants, and explicit non-goals.
-2. Implement a reviewable vertical slice before adding breadth.
-3. Preserve correlation evidence and fail clearly on invalid inputs.
-4. Test the happy path, three failures, restart/recovery where relevant, and the custom case.
-5. Document one rejected alternative and its tradeoff.
+1. Propagate context across every boundary you control.
+2. Emit structured logs correlated with trace/span IDs.
+3. Measure request rate, errors, and duration with bounded-cardinality dimensions.
+4. Represent dependency work as child spans with semantic conventions where available.
+5. Preserve errors and useful span events without recording secrets or full sensitive payloads.
+6. Create one latency or failure case and diagnose it using the Quest World investigation method.
+7. Demonstrate that disabling or losing one signal does not silently change application correctness.
 
-## Custom-case design
+## Required comparison
 
-Choose `delay`, `unavailable`, or `malformed` only as a starting mechanism. Make the case subject-specific through the hypothesis, workload, expected signal, client behavior, and assertion.
-
-```powershell
-.\training-platform\student\new-case.ps1 -Name my-week-08-case -Mode delay -DelayMs 700 -LearningGoal "Replace with the specific concept being tested"
-.\training-platform\student\run-case.ps1 -Case my-week-08-case
-```
-
-Edit the generated JSON to make the learning goal and expected signal precise. Never edit mentor presets.
-
-## Review checkpoints
-
-- Tuesday midday: acceptance criteria and interface sketch
-- Tuesday end: vertical slice and initial tests
-- Wednesday midday: custom case and failure matrix
-- Wednesday end: complete tests, runbook, evidence, and clean smoke test
-
-## Hints
-
-- Reduce scope before adding abstractions.
-- Turn every surprising observation into a minimal reproduction.
-- A case is valuable when it can disprove an assumption, not merely make the system fail.
+Explain the difference between instrumentation and observability backend, correlation and coincidence, symptom and cause, logs and span events, metrics and traces, and request identifiers versus trace context.
 
 ## Done when
 
-Another student can clone, run, test, exercise, recover, and explain the project from your artifacts without mentor operation.
+Another student can trigger the case, start from a user-visible symptom, use telemetry to narrow the cause, and point from each conclusion to evidence.
