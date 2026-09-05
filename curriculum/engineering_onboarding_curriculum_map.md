@@ -1,6 +1,6 @@
 # 13-week curriculum map
 
-Expected student time is approximately 40 hours weekly across Sunday–Thursday. Each ordinary day is planned for eight hours including normal breaks and team ceremonies: Sunday covers sources and foundations; Monday guided practice and a visible case; Tuesday design and implementation; Wednesday implementation, custom cases, and failure testing; Thursday reproduction, documentation, mentor review, and remediation. Shortened weeks must have explicit scope reduction rather than hidden overtime. Students independently operate the supplied environment and create deterministic cases. Windows and PowerShell are delivery mechanisms, not assessed subjects. Mentor review challenges and assesses the student; it does not activate the exercise. Weeks are cumulative; the capstone reuses API, data, messaging, telemetry, reliability, and operational practices.
+Expected student time is approximately 40 hours weekly across Sunday–Thursday. Each ordinary day is planned for eight hours including normal breaks and team ceremonies: Sunday covers sources and foundations; Monday guided practice and a visible case; Tuesday design and implementation; Wednesday implementation, custom cases, and failure testing; Thursday reproduction, documentation, mentor review, and remediation. Shortened weeks must have explicit scope reduction rather than hidden overtime. Students independently operate the supplied environment and create deterministic cases. Windows and PowerShell are delivery mechanisms, not assessed subjects. Mentor review challenges and assesses the student; it does not activate the exercise. Weeks 1–12 form the shared curriculum. Week 13 is reserved for organization-authored system knowledge and deliberately contains no generic learning material or lab.
 
 | Week | Theme | Environment profile | Primary evidence |
 |---:|---|---|---|
@@ -16,11 +16,11 @@ Expected student time is approximately 40 hours weekly across Sunday–Thursday.
 | 10 | Security, Authentication, and Authorization | `week-10` | Demo, tests, custom case, decision log |
 | 11 | Performance, Capacity, and Resilience | `week-11` | Demo, tests, custom case, decision log |
 | 12 | Delivery and Operations | `week-12` | Demo, tests, custom case, decision log |
-| 13 | Capstone Incident | `week-13` | Demo, tests, custom case, decision log |
+| 13 | Our System — Organization-authored Week | Organization-defined | Organization-defined |
 
 ## Gates
 
 - Weeks 1–4: independently operates the environment and reasons about contracts and data models.
 - Weeks 5–9: creates cases and reasons about distributed behavior and failure.
 - Weeks 10–12: can ship and operate changes responsibly.
-- Week 13: can synthesize evidence during an incident.
+- Week 13: learning goals and review criteria are set by the onboarding owner.

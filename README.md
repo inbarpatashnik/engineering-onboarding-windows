@@ -1,6 +1,6 @@
 # Engineering Onboarding — Windows-first package
 
-This repository is a complete 13-week engineering onboarding program for one student and one mentor. The required student path assumes **Windows 10/11**, **PowerShell 7+**, **Git**, **Python 3.11+**, and **Docker Desktop using Linux containers**. No required workflow depends on Bash, Make, `chmod`, Unix sockets, symbolic links, or `/tmp` paths.
+This repository provides a complete 12-week shared engineering curriculum plus an intentionally empty, organization-authored Week 13 for one student and one mentor. The required student path assumes **Windows 10/11**, **PowerShell 7+**, **Git**, **Python 3.11+**, and **Docker Desktop using Linux containers**. No required workflow depends on Bash, Make, `chmod`, Unix sockets, symbolic links, or `/tmp` paths.
 
 ## Start here
 
@@ -16,7 +16,7 @@ This repository is a complete 13-week engineering onboarding program for one stu
 
 | Location | Audience | Purpose |
 |---|---|---|
-| `curriculum/` | Both | Syllabus, 13-week map, assessment rubric |
+| `curriculum/` | Both | Syllabus, 12-week shared map, organization-authored Week 13 slot, assessment rubric |
 | `student/` | Student | Complete weekly learning packs: sources, workshops, small exercises, labs, projects, synthesis, and checklists |
 | `mentor/` | Mentor only | Review guidance, hints, red flags, incident keys |
 | `training-platform/` | Both, controls mentor-only | Docker environment, simulator, scripts, seed data, fault presets |

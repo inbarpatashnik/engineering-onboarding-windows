@@ -2,7 +2,7 @@
 
 ## Learning model
 
-Each week combines concepts, a constrained build, evidence collection, review, and reflection. Depth labels are **Deep** (implement and debug), **Working familiarity** (use safely and explain tradeoffs), and **Awareness** (recognize and know when to seek help).
+Weeks 1–12 combine concepts, a constrained build, evidence collection, review, and reflection. Depth labels are **Deep** (implement and debug), **Working familiarity** (use safely and explain tradeoffs), and **Awareness** (recognize and know when to seek help). Week 13 is deliberately empty so the onboarding owner can supply organization-specific system knowledge.
 
 ## Week 1: Advanced Git, Reproducible Verification, and CI Foundations
 
@@ -88,9 +88,6 @@ Each week combines concepts, a constrained build, evidence collection, review, a
 - **Applied work:** Create a safe release runbook.
 - **Exit capability:** Plan detection, rollback, and data compatibility.
 
-## Week 13: Capstone Incident
+## Week 13: Our System — Organization-authored Week
 
-- **Depth:** Deep
-- **Subjects:** system synthesis, incident response, communication, remediation.
-- **Applied work:** Diagnose and stabilize a multi-symptom incident.
-- **Exit capability:** Lead a clear evidence-based incident review.
+This week is intentionally left empty for organization-specific sources, exercises, access guidance, safety boundaries, deliverables, and review criteria.

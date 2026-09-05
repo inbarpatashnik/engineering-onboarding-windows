@@ -21,7 +21,8 @@ Students own routine operation. `student/run-case.ps1` applies a visible determi
 - Weeks 1–2: simulator only
 - Weeks 3 and 7: PostgreSQL
 - Weeks 4, 5, 8, 9, 10, 11: PostgreSQL and Redis as relevant
-- Weeks 6, 12, 13: PostgreSQL, Redis, and Apache Kafka
+- Weeks 6 and 12: PostgreSQL, Redis, and Apache Kafka
+- Week 13: no supplied services; the week is organization-authored
 
 Week 6 treats Kafka as a disposable dependency. Students learn producer and consumer behavior, not broker installation or cluster administration. See `week-06/README.md` for the setup timebox and fallback route.
 

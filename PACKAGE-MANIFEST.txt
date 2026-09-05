@@ -32,8 +32,7 @@ mentor/week-11/guide.md
 mentor/week-11/review-notes-template.md
 mentor/week-12/guide.md
 mentor/week-12/review-notes-template.md
-mentor/week-13/guide.md
-mentor/week-13/review-notes-template.md
+mentor/week-13/README.md
 student/README.md
 student/week-01/assignment.md
 student/week-01/deliverables-checklist.md
@@ -144,15 +143,7 @@ student/week-12/exercises/04-project-and-custom-case.md
 student/week-12/exercises/05-weekly-synthesis.md
 student/week-12/learning-guide.md
 student/week-12/source-guide.md
-student/week-13/assignment.md
-student/week-13/deliverables-checklist.md
-student/week-13/exercises/01-source-notes.md
-student/week-13/exercises/02-small-practice.md
-student/week-13/exercises/03-environment-lab.md
-student/week-13/exercises/04-project-and-custom-case.md
-student/week-13/exercises/05-weekly-synthesis.md
-student/week-13/learning-guide.md
-student/week-13/source-guide.md
+student/week-13/README.md
 training-platform/.env.example
 training-platform/README.md
 training-platform/compose.yaml
@@ -182,7 +173,6 @@ training-platform/mentor/incident-presets/week-09.json
 training-platform/mentor/incident-presets/week-10.json
 training-platform/mentor/incident-presets/week-11.json
 training-platform/mentor/incident-presets/week-12.json
-training-platform/mentor/incident-presets/week-13.json
 training-platform/mentor/reset-faults.ps1
 training-platform/mentor/set-fault.ps1
 training-platform/python/build_week01_git_lab.py
@@ -210,7 +200,6 @@ training-platform/student/cases/week-09-practice.json
 training-platform/student/cases/week-10-practice.json
 training-platform/student/cases/week-11-practice.json
 training-platform/student/cases/week-12-practice.json
-training-platform/student/cases/week-13-practice.json
 training-platform/student/new-case.ps1
 training-platform/student/reset-case.ps1
 training-platform/student/run-case.ps1
